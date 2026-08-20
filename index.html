@@ -83,7 +83,15 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outli
 .lg[data-v="4"] .k{background:var(--sev4-bg);color:var(--sev4-ink)}
 .archwrap{margin-top:16px}
 .archlbl{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:7px}
-.arch{display:flex;justify-content:center;align-items:flex-start}
+.arch{display:flex;justify-content:flex-start;align-items:flex-start;width:max-content;margin:0 auto}
+.scroll-x-container{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.scroll-ind{display:none;align-items:center;gap:10px;margin-top:9px}
+.scroll-ind.on{display:flex}
+.scroll-ind .bar{position:relative;flex:1 1 auto;height:4px;border-radius:2px;background:var(--line)}
+.scroll-ind .thumb{position:absolute;top:0;bottom:0;left:0;width:30%;border-radius:2px;background:var(--accent)}
+.scroll-ind .slbl{flex:none;font-size:11.5px;color:var(--muted)}
+.legend-collapse>summary{display:none}
+.surf,.tnum{-webkit-touch-callout:none;user-select:none;-webkit-user-select:none;touch-action:manipulation}
 .quad{display:flex;gap:5px}
 .quad+.quad{margin-left:15px;padding-left:15px;border-left:1px dashed var(--line-strong)}
 .tooth{width:72px;display:flex;flex-direction:column;align-items:center;gap:3px}
@@ -196,6 +204,98 @@ textarea.journal{width:100%;min-height:300px;padding:14px 16px;border:1px solid 
 .mbar-p[data-sev="4"]{background:var(--sev4-bg);border-color:var(--sev4-line)}.mbar-p[data-sev="4"] .mv{color:var(--sev4-ink)}
 .mbar-dx{font-size:13px;color:var(--ink-soft);line-height:1.35}
 .mbar-chev{margin-left:auto;color:var(--muted);font-size:12px;flex:none}
+/* --- mobil: progressiv tilpasning under 768px (scope: screen, print urørt) --- */
+@media screen and (max-width:767px){
+  body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
+  .top-inner{padding:16px 14px;gap:14px}
+  .brand h1{font-size:21px}
+  .meta{margin-left:0;width:100%;gap:10px}
+  .meta .field{flex:1 1 140px;min-width:140px}
+  .wrap{padding:12px}
+  .card{padding:16px 14px 18px;border-radius:12px}
+  .card+.card{margin-top:12px}
+  .shead{flex-wrap:wrap;gap:9px}
+  .sub{font-size:12.5px;margin:6px 0 12px}
+  /* skjemafelt stables */
+  .row2,.row3,.row4{grid-template-columns:1fr}
+  .checks.cols2{grid-template-columns:1fr}
+  .whycols{grid-template-columns:1fr;gap:18px}
+  .bewe-grid{grid-template-columns:1fr}
+  .lg{flex:1 1 100%}
+  .field input,.field textarea{font-size:16px}
+  .field input{min-height:44px}
+  /* pillegrupper: full bredde per pille ved 4+ valg */
+  .seg-many{gap:7px}
+  .seg-many label{flex:1 1 100%;width:100%}
+  .seg-many span{display:block;width:100%;text-align:center;padding:12px 13px}
+  .seg span{padding:11px 14px}
+  /* checks: konsekvens-chippen under teksten */
+  .check{flex-wrap:wrap;padding:11px 12px}
+  .check .txt{flex:1 1 auto;min-width:0}
+  .tag,.doc-item .cnt{order:3;margin-left:28px;margin-top:6px;align-self:flex-start}
+  /* knapper */
+  button.btn{min-height:44px;flex:1 1 auto}
+  .toolbar{gap:8px}
+  .toolbar .flash{flex:1 1 100%;margin-right:0}
+  .switch{min-height:44px}
+  /* fargeforklaring kollapses */
+  .legend-collapse{border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface-2);margin:12px 0 4px}
+  .legend-collapse>summary{display:flex;align-items:center;gap:9px;cursor:pointer;padding:11px 13px;font-size:13px;font-weight:600;color:var(--accent-ink);list-style:none;min-height:44px}
+  .legend-collapse>summary::-webkit-details-marker{display:none}
+  .legend-collapse>summary::before{content:"+";font-family:var(--font-mono);font-weight:700;font-size:14px;width:18px;height:18px;border:1px solid var(--line-strong);border-radius:5px;display:flex;align-items:center;justify-content:center;background:var(--surface);flex:none}
+  .legend-collapse[open]>summary::before{content:"–"}
+  .legend{margin:0;padding:0 11px 11px}
+  /* odontogram: kjever alltid som separate blokker, snap ved sveip */
+  .archwrap{margin-top:14px}
+  .scroll-x-container{scroll-snap-type:x proximity;scroll-padding-left:2px}
+  .arch{margin:0}
+  .tooth{width:96px;scroll-snap-align:start}
+  body.simple .tooth{width:52px}
+  .tnum{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .surf{height:46px;font-size:14px}
+  body.simple .surf{height:48px}
+  .surf .sl{font-size:11px}
+  .tbar{height:5px}
+  .tw-bar{gap:10px}
+  .tw-bar .btn,.tw-bar .switch{flex:1 1 100%}
+  .tws{flex:1 1 100%}
+  /* dokumentasjonsstatus */
+  .docstatus{flex-wrap:wrap}
+  .docstatus .dd{margin-left:0;text-align:left;flex:1 1 100%}
+  .doc-item textarea{font-size:16px}
+  /* seksjon 8: sticky kopiknapp over teksten */
+  .card-journal{display:flex;flex-direction:column}
+  .card-journal .shead{order:1}
+  .card-journal .sub{order:2}
+  .toolbar-journal{order:3;position:sticky;top:0;z-index:20;margin:0 -14px 12px;padding:10px 14px;background:var(--surface);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;justify-content:flex-start}
+  .toolbar-journal .btn{order:1;width:100%}
+  .toolbar-journal .flash{order:2;text-align:center;margin:0}
+  textarea.journal{order:4;min-height:40vh;font-size:16px}
+  /* bunnlinje: komprimert, respekterer safe area */
+  .mbar{gap:10px;padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px))}
+  .mbar-dx{display:none}
+  .mbar-p{min-width:56px;padding:4px 9px}
+  .mbar-p .mv{font-size:19px}
+  .mbar-chev{font-size:12.5px;font-weight:600;color:var(--accent-ink)}
+}
+@media screen and (max-width:479px){
+  .mbar #mDentinPill,.mbar #m34Pill{display:none}
+  .meta .field{flex:1 1 100%}
+}
+/* --- nettbrett i portrett: grov peker opp til 1023px får 44px trykkflater --- */
+@media screen and (min-width:768px) and (max-width:1023px) and (pointer:coarse){
+  .tooth{width:96px}
+  body.simple .tooth{width:52px}
+  .surf{height:46px;font-size:14px}
+  body.simple .surf{height:48px}
+  .surf .sl{font-size:11px}
+  .tnum{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .scroll-x-container{scroll-snap-type:x proximity}
+  .tooth{scroll-snap-align:start}
+  button.btn{min-height:44px}
+  .field input{min-height:44px}
+  .field input,.field textarea,.doc-item textarea{font-size:16px}
+}
 /* --- print --- */
 #report{display:none}
 @media print{header.top,.wrap,.mbar{display:none!important}#report{display:block}@page{margin:16mm}body{background:#fff;padding-bottom:0}}
@@ -250,15 +350,16 @@ table.tw-tbl td.miss{color:var(--muted);text-decoration:line-through}
 <label class="switch"><input type="checkbox" id="simpleMode"><span>Forenklet modus — kun okklusal/incisal flate</span></label>
 <button class="btn secondary" id="clearTeeth" type="button">Nullstill odontogram</button>
 </div>
+<details class="legend-collapse" id="legendTwi" open><summary>Fargeforklaring 0–4</summary>
 <div class="legend">
 <div class="lg" data-v="0"><span class="k">0</span><span class="d">Ingen tap av emaljekarakteristikk</span></div>
 <div class="lg" data-v="1"><span class="k">1</span><span class="d">Tap av emaljekarakteristikk, konturendring</span></div>
 <div class="lg" data-v="2"><span class="k">2</span><span class="d">Emaljetap med dentineksponering under 1/3 av flaten</span></div>
 <div class="lg" data-v="3"><span class="k">3</span><span class="d">Emaljetap med dentineksponering over 1/3 av flaten</span></div>
 <div class="lg" data-v="4"><span class="k">4</span><span class="d">Fullstendig emaljetap, pulpa eller sekundærdentin eksponert</span></div>
-</div>
-<div class="archwrap"><div class="archlbl">Overkjeve · 18–11 / 21–28</div><div class="arch" id="archUpper"></div></div>
-<div class="archwrap"><div class="archlbl">Underkjeve · 48–41 / 31–38</div><div class="arch" id="archLower"></div></div>
+</div></details>
+<div class="archwrap"><div class="archlbl">Overkjeve · 18–11 / 21–28</div><div class="scroll-x-container" id="scUpper"><div class="arch" id="archUpper"></div></div><div class="scroll-ind" id="indUpper" aria-hidden="true"><span class="bar"><span class="thumb"></span></span><span class="slbl">Sveip for å se hele kjeven</span></div></div>
+<div class="archwrap"><div class="archlbl">Underkjeve · 48–41 / 31–38</div><div class="scroll-x-container" id="scLower"><div class="arch" id="archLower"></div></div><div class="scroll-ind" id="indLower" aria-hidden="true"><span class="bar"><span class="thumb"></span></span><span class="slbl">Sveip for å se hele kjeven</span></div></div>
 <div class="hint">Flatene vises som B (bukkal), O (okklusal/incisal), L (lingual/palatinal) og C (cervikal). Fargestripen under hver tann viser høyeste score på tannen.</div>
 <div class="twstats">
 <div class="tws"><div class="k">Flater score 3–4</div><div class="v" id="s34">0</div></div>
@@ -272,12 +373,13 @@ table.tw-tbl td.miss{color:var(--muted);text-decoration:line-through}
 <section class="card"><div class="shead"><span class="n">3</span><h2>BEWE</h2><span class="opt">Valgfri</span></div>
 <p class="sub">Basic Erosive Wear Examination. Registrer verst affiserte flate i hver sekstant. Brukes som supplement når erosjon er en aktuell etiologisk faktor.</p>
 <details class="collapse"><summary>Åpne BEWE-registrering</summary><div class="collapse-body">
+<details class="legend-collapse" id="legendBewe" open><summary>Fargeforklaring 0–3</summary>
 <div class="legend">
 <div class="lg" data-v="0"><span class="k">0</span><span class="d">Ingen slitasje</span></div>
 <div class="lg" data-v="1"><span class="k">1</span><span class="d">Begynnende overflatetap i emalje</span></div>
 <div class="lg" data-v="2"><span class="k">2</span><span class="d">Tydelig defekt, under 50 % av flaten</span></div>
 <div class="lg" data-v="3"><span class="k">3</span><span class="d">Defekt på 50 % eller mer av flaten</span></div>
-</div>
+</div></details>
 <div class="bewe-grid" id="beweGrid"></div>
 <div class="twstats" style="margin-top:14px">
 <div class="tws"><div class="k">BEWE-sum (0–18)</div><div class="v" id="beweSum">—</div></div>
@@ -384,10 +486,10 @@ table.tw-tbl td.miss{color:var(--muted);text-decoration:line-through}
 </div>
 </section>
 
-<section class="card"><div class="shead"><span class="n">8</span><h2>Generert journaltekst</h2></div>
+<section class="card card-journal"><div class="shead"><span class="n">8</span><h2>Generert journaltekst</h2></div>
 <p class="sub">Sammenhengende journaltekst basert på alt som er registrert over. Ren tekst uten formatering — kan limes rett inn i Opus. Teksten oppdateres fortløpende.</p>
 <textarea class="journal" id="journalText" readonly aria-label="Generert journaltekst"></textarea>
-<div class="toolbar"><span class="flash" id="copyFlash" role="status"></span><button class="btn" id="copyBtn" type="button">Kopier journaltekst</button></div>
+<div class="toolbar toolbar-journal"><span class="flash" id="copyFlash" role="status"></span><button class="btn" id="copyBtn" type="button">Kopier journaltekst</button></div>
 </section>
 
 <section class="card" id="resultCard"><div class="shead"><span class="n">∑</span><h2>Resultat</h2></div>
@@ -500,6 +602,7 @@ function buildArch(el,list){
 buildArch($('archUpper'),UPPER);buildArch($('archLower'),LOWER);
 
 function onArchClick(e){
+  if(lpFired){lpFired=false;return}
   const miss=e.target.closest('[data-act="miss"]');
   const surf=e.target.closest('.surf');
   const tEl=e.target.closest('.tooth');if(!tEl)return;
@@ -693,6 +796,7 @@ function recompute(){
   const mp=[];if(doc.missChk.length)mp.push(pk(doc.missChk.length)+' ikke avhuket');if(doc.missTxt.length)mp.push(pk(doc.missTxt.length)+' uten tilstrekkelig begrunnelse');
   $('mDx').textContent=doc.state==='green'?'Alle sju dokumentasjonspunkter er avhuket og begrunnet.':mp.join(' · ')+'.';
 
+  if(typeof updateScrollInd==='function')updateScrollInd();
   const journal=buildJournal(tw,bw,doc,age);
   $('journalText').value=journal;
   buildReport(tw,bw,doc,age,warns,journal);
@@ -925,7 +1029,7 @@ function reset(){
   document.querySelectorAll('input[type=checkbox]').forEach(c=>{c.checked=false});
   document.querySelectorAll('input[type=text],input[type=number],input[type=date],textarea').forEach(e=>{if(e.id!=='journalText')e.value=''});
   ALL.forEach(id=>{teeth[id]={miss:false,b:0,o:0,l:0,c:0}});
-  repaintAll();setToday();$('copyFlash').textContent='';recompute();window.scrollTo({top:0,behavior:'smooth'});
+  repaintAll();setToday();$('copyFlash').textContent='';simpleTouchedByUser=false;applyMobileSimpleDefault();recompute();updateScrollInd();window.scrollTo({top:0,behavior:'smooth'});
 }
 let flashTimer=null;
 function flash(m){$('copyFlash').textContent=m;clearTimeout(flashTimer);flashTimer=setTimeout(()=>{$('copyFlash').textContent=''},4000)}
@@ -945,14 +1049,80 @@ mirror('repdate','gdate');mirror('repref','gref');
 const appEl=document.querySelector('.app');
 appEl.addEventListener('input',recompute);
 appEl.addEventListener('change',recompute);
-$('simpleMode').addEventListener('change',()=>{repaintAll();recompute()});
+$('simpleMode').addEventListener('change',()=>{simpleTouchedByUser=true;repaintAll();recompute()});
 $('clearTeeth').addEventListener('click',clearTeeth);
 $('copyBtn').addEventListener('click',copyJournal);
 $('resetBtn').addEventListener('click',reset);
 $('printBtn').addEventListener('click',()=>{recompute();window.print()});
 $('mobileBar').addEventListener('click',()=>{$('resultCard').scrollIntoView({behavior:'smooth',block:'start'})});
 window.addEventListener('beforeprint',recompute);
-setToday();repaintAll();recompute();
+
+/* ---------- mobil: progressiv tilpasning ---------- */
+const MQ_MOBILE=window.matchMedia('(max-width:767px)');
+const isMobile=()=>MQ_MOBILE.matches;
+let simpleTouchedByUser=false;
+
+/* pillegrupper med 4+ valg merkes for full bredde per pille (unntatt BEWE-sekstantene) */
+function markSegs(){document.querySelectorAll('.seg').forEach(el=>{
+  if(el.closest('.sextant'))return;
+  el.classList.toggle('seg-many',el.querySelectorAll('label').length>=4)})}
+markSegs();
+
+/* fargeforklaring: åpen på desktop, kollapset på mobil */
+function syncLegends(){['legendTwi','legendBewe'].forEach(id=>{const d=$(id);if(d)d.open=!isMobile()})}
+
+/* forenklet modus som default under 768px, men brukeren kan fortsatt slå den av */
+function applyMobileSimpleDefault(){
+  if(isMobile()&&!simpleTouchedByUser&&!$('simpleMode').checked){$('simpleMode').checked=true;return true}
+  return false;
+}
+
+/* horisontal scroll-indikator per kjeve */
+const SCROLLERS=[['scUpper','indUpper'],['scLower','indLower']];
+function updateScrollInd(){SCROLLERS.forEach(p=>{
+  const c=$(p[0]),ind=$(p[1]);if(!c||!ind)return;
+  const sw=c.scrollWidth,cw=c.clientWidth;
+  if(sw-cw<=2){ind.classList.remove('on');return}
+  ind.classList.add('on');
+  const thumb=Math.max(cw/sw*100,14),max=100-thumb;
+  const pos=c.scrollLeft/(sw-cw);
+  const t=ind.querySelector('.thumb');
+  t.style.width=thumb+'%';t.style.left=(pos*max)+'%';
+})}
+SCROLLERS.forEach(p=>{const c=$(p[0]);if(c)c.addEventListener('scroll',updateScrollInd,{passive:true})});
+window.addEventListener('resize',()=>{syncLegends();if(applyMobileSimpleDefault())recompute();markSegs();updateScrollInd()});
+
+/* langtrykk 500 ms = gå bakover i skalaen (touch); Shift-klikk beholdes på desktop */
+let lpTimer=null,lpFired=false,lpX=0,lpY=0;
+function lpStart(e){
+  if(e.pointerType==='mouse')return;
+  const surf=e.target.closest('.surf');if(!surf)return;
+  const tEl=surf.closest('.tooth');if(!tEl||teeth[tEl.dataset.t].miss)return;
+  lpFired=false;lpX=e.clientX;lpY=e.clientY;
+  clearTimeout(lpTimer);
+  lpTimer=setTimeout(()=>{
+    lpTimer=null;lpFired=true;
+    const id=tEl.dataset.t,sf=surf.dataset.s;
+    teeth[id][sf]=(teeth[id][sf]+4)%5;
+    surf.dataset.v=teeth[id][sf];surf.querySelector('.sv').textContent=teeth[id][sf];
+    paintTooth(id);recompute();
+    if(navigator.vibrate)try{navigator.vibrate(15)}catch(err){}
+  },500);
+}
+function lpMove(e){if(lpTimer&&(Math.abs(e.clientX-lpX)>10||Math.abs(e.clientY-lpY)>10)){clearTimeout(lpTimer);lpTimer=null}}
+function lpEnd(){clearTimeout(lpTimer);lpTimer=null}
+[['archUpper'],['archLower']].forEach(a=>{const el=$(a[0]);
+  el.addEventListener('pointerdown',lpStart);
+  el.addEventListener('pointermove',lpMove,{passive:true});
+  el.addEventListener('pointerup',lpEnd);
+  el.addEventListener('pointercancel',lpEnd);
+  el.addEventListener('pointerleave',lpEnd);
+  el.addEventListener('contextmenu',e=>{if(e.target.closest('.surf'))e.preventDefault()});
+});
+
+setToday();repaintAll();
+syncLegends();applyMobileSimpleDefault();
+recompute();updateScrollInd();
 </script>
 </body>
 </html>

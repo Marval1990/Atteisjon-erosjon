@@ -33,6 +33,17 @@ Nederst: resultatpanel med begrunnelseslister, kontrollpunkter, «Nullstill»
 og «Skriv ut rapport». Sticky bunnlinje viser løpende dokumentasjonsstatus
 og antall tenner med dentineksponering.
 
+## Mobil
+
+Desktop-oppsettet er uendret. Under 768px legges mobiltilpasning på
+progressivt: forenklet modus (kun okklusal/incisal) er default, kjevene
+vises som separate blokker med horisontal scroll, snap og scroll-indikator,
+tannnummer og flater har minst 44x44px trykkflate, og langtrykk i 500 ms går
+bakover i scoreskalaen (Shift-klikk beholdes på desktop). Bunnlinjen
+komprimeres til dokumentasjonsstatus og «Gå til resultat», og respekterer
+safe-area-inset-bottom. Nettbrett i portrett (768–1023px med berøringsskjerm)
+får trykkvennlig odontogram uten å endre desktop-layouten.
+
 ## Personvern
 
 Ingen data lagres eller sendes. Ingenting skrives til nettleserens lagring,
