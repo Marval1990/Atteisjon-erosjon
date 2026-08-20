@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Attrisjon og erosjon · dokumentasjon for innslagspunkt 9</title>
+<meta name="description" content="Chairside dokumentasjonsstøtte for patologisk tap av tannsubstans — TWI, BEWE, okklusjon, etiologi og alvorlighetsvurdering mot HELFO innslagspunkt 9. Ingen data lagres eller sendes.">
+<meta name="theme-color" content="#1E6E5B">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E6E5B'/%3E%3Cpath d='M32 12c-7 0-9 3-13 3-3.5 0-6 2.5-6 7 0 7 3 10 4.5 17.5C19 47 20 52 23 52c3.2 0 3.4-8 9-8s5.8 8 9 8c3 0 4-5 5.5-12.5C48 32 51 29 51 22c0-4.5-2.5-7-6-7-4 0-6-3-13-3z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#F4F7F5;--surface:#FFFFFF;--surface-2:#FAFCFB;--ink:#16201C;--ink-soft:#3D4843;--muted:#5A635C;
+  --line:#E4EAE6;--line-strong:#CBD4CE;--accent:#1E6E5B;--accent-soft:#E6F0EC;--accent-ink:#124A3D;
+  --sev1:#3E8E6A;--sev2:#7E9A3C;--sev3:#C2871F;--sev4:#B0512C;
+  --sev1-ink:#2F7355;--sev2-ink:#5E7429;--sev3-ink:#8A5E10;--sev4-ink:#8A3A1C;
+  --sev1-bg:#E8F2EC;--sev2-bg:#F1F3E2;--sev3-bg:#F8EFD9;--sev4-bg:#F7E7DE;
+  --sev1-line:#cfe5d8;--sev2-line:#dde2c0;--sev3-line:#ecd9ad;--sev4-line:#ecccba;
+  --radius:14px;--radius-sm:9px;
+  --font-ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --font-mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:var(--font-ui);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:82px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top-inner{max-width:1400px;margin:0 auto;padding:22px 24px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 28px}
+.brand h1{font-family:var(--font-display);font-size:25px;font-weight:600;margin:0;letter-spacing:.01em}
+.brand .src{font-size:12.5px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.meta{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}.meta .field{min-width:148px}
+.wrap{max-width:1400px;margin:0 auto;padding:24px}.app{display:block}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px}.card+.card{margin-top:16px}
+.shead{display:flex;align-items:baseline;gap:12px;margin:0}
+.shead .n{font-family:var(--font-display);font-size:26px;color:var(--accent);font-weight:600;line-height:1;flex:none}
+.shead h2{font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin:0;font-weight:700}
+.shead .opt{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:2px 7px}
+.sub{color:var(--muted);font-size:13px;margin:6px 0 14px;max-width:96ch}
+.grp{margin-top:18px}.grp .lbl{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:9px}
+.grp .lbl .soft{font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)}
+.hint{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+.seg{display:flex;flex-wrap:wrap;gap:6px}.seg label{position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0;width:0;height:0}
+.seg span{display:inline-block;padding:8px 13px;border:1px solid var(--line-strong);border-radius:999px;font-size:13px;color:var(--ink-soft);background:var(--surface);transition:background .12s,border-color .12s,color .12s;line-height:1.2}
+.seg label:hover span{border-color:var(--accent)}
+.seg input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff}
+.seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.seg label.none span{border-style:dashed}
+.seg label.none input:checked+span{background:var(--surface-2);border-color:var(--line-strong);border-style:solid;color:var(--muted)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12.5px;font-weight:600;color:var(--ink-soft)}
+.field input,.field textarea{padding:9px 11px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);font:inherit;font-size:14px;color:var(--ink);background:var(--surface);width:100%}
+.field textarea{font-size:13.5px;line-height:1.45;resize:vertical;min-height:62px}
+input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.checks{display:grid;gap:8px}
+.checks.cols2{grid-template-columns:1fr 1fr}
+.check{display:flex;gap:11px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);cursor:pointer;background:var(--surface);transition:border-color .12s,background .12s}
+.check:hover{border-color:var(--line-strong);background:var(--surface-2)}
+.check input{margin:1px 0 0;width:17px;height:17px;accent-color:var(--accent);flex:none}
+.check .txt{font-size:13.5px;color:var(--ink-soft)}
+.check .txt small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.tag{font-family:var(--font-mono);font-size:11px;font-weight:600;padding:2px 7px;border-radius:6px;margin-left:auto;flex:none;letter-spacing:.02em}
+.tag.t3{background:var(--sev3-bg);color:#7A5200}.tag.t4{background:var(--sev4-bg);color:var(--sev4-ink)}
+.clinical-note{font-size:12px;line-height:1.5;color:var(--accent-ink);background:var(--accent-soft);border:1px solid #cfe5db;border-radius:9px;padding:10px 12px;margin-top:10px}
+.clinical-note strong{font-weight:700}
+.cd-note{font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+.cd-warn{display:none;font-size:12px;font-weight:600;color:#7A5200;background:#fbf1e3;border:1px solid #e6c9a8;border-radius:8px;padding:8px 11px;margin-top:10px}
+/* --- odontogram --- */
+.tw-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+.switch{display:inline-flex;align-items:center;gap:9px;cursor:pointer;padding:7px 12px;border:1px solid var(--line-strong);border-radius:999px;background:var(--surface);font-size:13px;color:var(--ink-soft)}
+.switch:hover{border-color:var(--accent)}
+.switch input{width:17px;height:17px;accent-color:var(--accent);margin:0}
+.legend{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 4px}
+.lg{display:flex;gap:7px;align-items:flex-start;flex:1 1 190px;min-width:180px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:7px 9px;background:var(--surface-2)}
+.lg .k{font-family:var(--font-mono);font-size:12px;font-weight:700;width:20px;height:20px;flex:none;border-radius:5px;display:flex;align-items:center;justify-content:center}
+.lg .d{font-size:11.5px;color:var(--ink-soft);line-height:1.35}
+.lg[data-v="0"] .k{background:var(--surface);border:1px solid var(--line-strong);color:var(--muted)}
+.lg[data-v="1"] .k{background:var(--sev1-bg);color:var(--sev1-ink)}
+.lg[data-v="2"] .k{background:var(--sev2-bg);color:var(--sev2-ink)}
+.lg[data-v="3"] .k{background:var(--sev3-bg);color:var(--sev3-ink)}
+.lg[data-v="4"] .k{background:var(--sev4-bg);color:var(--sev4-ink)}
+.archwrap{margin-top:16px}
+.archlbl{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:7px}
+.arch{display:flex;justify-content:center;align-items:flex-start}
+.quad{display:flex;gap:5px}
+.quad+.quad{margin-left:15px;padding-left:15px;border-left:1px dashed var(--line-strong)}
+.tooth{width:72px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.tnum{font-family:var(--font-mono);font-size:11.5px;font-weight:600;color:var(--ink-soft);background:none;border:1px solid transparent;border-radius:5px;padding:1px 6px;cursor:pointer;line-height:1.4}
+.tnum:hover{border-color:var(--line-strong);background:var(--surface-2)}
+.tnum:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.surfs{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:100%}
+.surf{height:27px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:3px;padding:0;background:var(--surface-2);color:var(--muted);transition:background .1s,border-color .1s,color .1s}
+.surf .sl{font-size:9px;font-weight:700;opacity:.62}
+.surf:hover{border-color:var(--accent)}
+.surf:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.surf[data-v="1"]{background:var(--sev1-bg);border-color:var(--sev1-line);color:var(--sev1-ink)}
+.surf[data-v="2"]{background:var(--sev2-bg);border-color:var(--sev2-line);color:var(--sev2-ink)}
+.surf[data-v="3"]{background:var(--sev3-bg);border-color:var(--sev3-line);color:var(--sev3-ink)}
+.surf[data-v="4"]{background:var(--sev4-bg);border-color:var(--sev4-line);color:var(--sev4-ink)}
+.tbar{height:4px;width:100%;border-radius:2px;background:var(--line)}
+.tbar[data-v="1"]{background:var(--sev1)}.tbar[data-v="2"]{background:var(--sev2)}
+.tbar[data-v="3"]{background:var(--sev3)}.tbar[data-v="4"]{background:var(--sev4)}
+.tooth.missing .surfs,.tooth.missing .tbar{opacity:.3;pointer-events:none}
+.tooth.missing .tnum{text-decoration:line-through;color:var(--muted)}
+body.simple .surf[data-s="b"],body.simple .surf[data-s="l"],body.simple .surf[data-s="c"]{display:none}
+body.simple .surfs{grid-template-columns:1fr}
+body.simple .surf{height:36px;font-size:14px}
+.twstats{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.tws{flex:1 1 160px;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:11px 13px}
+.tws .k{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.tws .v{font-family:var(--font-display);font-size:26px;font-weight:600;line-height:1.1;color:var(--ink);margin-top:2px}
+/* --- collapsible --- */
+details.collapse{border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface-2);margin-top:4px}
+details.collapse>summary{cursor:pointer;padding:11px 13px;font-size:13px;font-weight:600;color:var(--accent-ink);list-style:none;display:flex;align-items:center;gap:9px}
+details.collapse>summary::-webkit-details-marker{display:none}
+details.collapse>summary::before{content:"+";font-family:var(--font-mono);font-weight:700;font-size:14px;width:18px;height:18px;border:1px solid var(--line-strong);border-radius:5px;display:flex;align-items:center;justify-content:center;background:var(--surface);flex:none}
+details.collapse[open]>summary::before{content:"–"}
+details.collapse>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.collapse-body{padding:2px 13px 14px}
+.bewe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sextant{border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 11px;background:var(--surface)}
+.sextant .sx{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--accent-ink);margin-bottom:7px}
+.sextant .sx em{font-style:normal;color:var(--muted);font-weight:400;margin-left:5px}
+/* --- dokumentasjonssjekkliste --- */
+.doc-item{border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.doc-item+.doc-item{margin-top:9px}
+.doc-item .check{border:0;border-radius:0}
+.doc-item textarea{width:100%;border:0;border-top:1px solid var(--line);border-radius:0;padding:9px 12px;font:inherit;font-size:13.5px;line-height:1.45;color:var(--ink);background:var(--surface-2);resize:vertical;min-height:58px;display:block}
+.doc-item textarea:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.cnt{font-family:var(--font-mono);font-size:11px;font-weight:600;padding:2px 7px;border-radius:6px;margin-left:auto;flex:none;background:var(--sev4-bg);color:var(--sev4-ink)}
+.cnt[data-s="low"]{background:var(--sev3-bg);color:#7A5200}
+.cnt[data-s="ok"]{background:var(--sev1-bg);color:var(--sev1-ink)}
+.docstatus{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2)}
+.docstatus[data-s="red"]{background:var(--sev4-bg);border-color:var(--sev4-line)}
+.docstatus[data-s="yellow"]{background:var(--sev3-bg);border-color:var(--sev3-line)}
+.docstatus[data-s="green"]{background:var(--sev1-bg);border-color:var(--sev1-line)}
+.docstatus .dot{width:14px;height:14px;border-radius:50%;flex:none;background:var(--line-strong)}
+.docstatus[data-s="red"] .dot{background:var(--sev4)}
+.docstatus[data-s="yellow"] .dot{background:var(--sev3)}
+.docstatus[data-s="green"] .dot{background:var(--sev1)}
+.docstatus .dk{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.docstatus .dv{font-size:14px;font-weight:700;color:var(--ink)}
+.docstatus[data-s="red"] .dv{color:var(--sev4-ink)}
+.docstatus[data-s="yellow"] .dv{color:#7A5200}
+.docstatus[data-s="green"] .dv{color:var(--sev1-ink)}
+.docstatus .dd{font-size:12px;color:var(--ink-soft);margin-left:auto;text-align:right;line-height:1.4}
+/* --- resultat --- */
+.diag-pills{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.pill{flex:1 1 150px;min-width:0;border-radius:12px;padding:13px 14px;border:1px solid var(--line);background:var(--surface-2);transition:background .15s,border-color .15s}
+.pill .k{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.pill .v{font-family:var(--font-display);font-size:33px;font-weight:600;line-height:1.05;color:var(--ink);margin-top:3px}
+.pill .vsub{font-size:11.5px;color:var(--muted);margin-top:2px}
+.pill[data-sev="1"]{background:var(--sev1-bg);border-color:var(--sev1-line)}.pill[data-sev="1"] .v{color:var(--sev1-ink)}
+.pill[data-sev="2"]{background:var(--sev2-bg);border-color:var(--sev2-line)}.pill[data-sev="2"] .v{color:var(--sev2-ink)}
+.pill[data-sev="3"]{background:var(--sev3-bg);border-color:var(--sev3-line)}.pill[data-sev="3"] .v{color:var(--sev3-ink)}
+.pill[data-sev="4"]{background:var(--sev4-bg);border-color:var(--sev4-line)}.pill[data-sev="4"] .v{color:var(--sev4-ink)}
+.dx{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.dx .dxk{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.dx .dxv{font-family:var(--font-display);font-size:19px;line-height:1.3;color:var(--ink);margin-top:4px}
+.dx .dxhint{font-size:13px;color:var(--muted);font-family:var(--font-ui)}
+.statuschip{display:inline-block;font-family:var(--font-ui);font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink-soft)}
+.statuschip[data-state="green"]{background:var(--sev1-bg);border-color:var(--sev1-line);color:var(--sev1-ink)}
+.statuschip[data-state="yellow"]{background:var(--sev3-bg);border-color:var(--sev3-line);color:#7A5200}
+.statuschip[data-state="red"]{background:var(--sev4-bg);border-color:var(--sev4-line);color:var(--sev4-ink)}
+.ratiobox{margin-top:14px;display:flex;align-items:center;gap:10px;background:var(--accent-soft);border:1px solid #cfe5db;border-radius:10px;padding:10px 13px}
+.ratiobox .rk{font-size:12px;color:var(--accent-ink);font-weight:600}
+.ratiobox .rv{font-family:var(--font-mono);font-size:18px;font-weight:600;color:var(--accent-ink);margin-left:auto}
+.whycols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:16px}
+.why h3{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 8px;font-weight:700}
+.why ul{margin:0;padding-left:18px}
+.why li{font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;line-height:1.45}
+.why li.warn{color:var(--sev4-ink)}
+.note{font-size:11.5px;color:var(--muted);margin-top:16px;line-height:1.5;border-top:1px solid var(--line);padding-top:12px}
+.warnbanner{display:none;flex-direction:column;gap:6px;margin-top:14px}
+.warnbanner .w{font-size:12.5px;line-height:1.4;padding:9px 12px;border-radius:9px;border:1px solid #e6c9a8;background:#fbf1e3;color:#7A5200}
+.warnbanner .w.err{border-color:#e0b4a6;background:#f9e8e1;color:var(--sev4-ink);font-weight:600}
+.warnbanner .w.neutral{border-color:var(--line-strong);background:var(--surface-2);color:var(--ink-soft)}
+.toolbar{display:flex;gap:10px;justify-content:flex-end;margin-top:16px;align-items:center;flex-wrap:wrap}
+.toolbar .flash{font-size:12.5px;color:var(--accent-ink);margin-right:auto}
+button.btn{font:inherit;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;transition:filter .12s}
+button.btn.secondary{background:var(--surface);color:var(--accent-ink);border-color:var(--line-strong)}
+button.btn:hover{filter:brightness(1.06)}
+button.btn:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px}
+/* --- journaltekst --- */
+textarea.journal{width:100%;min-height:300px;padding:14px 16px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);font-family:var(--font-ui);font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--surface-2);resize:vertical}
+/* --- sticky statuslinje --- */
+.mbar{display:flex;align-items:center;gap:12px;position:fixed;left:0;right:0;bottom:0;z-index:50;width:100%;margin:0;text-align:left;font:inherit;cursor:pointer;padding:9px 22px;background:var(--surface);border:0;border-top:1px solid var(--line-strong);box-shadow:0 -4px 16px rgba(22,32,28,.10)}
+.mbar-p{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:64px;padding:5px 11px;border-radius:10px;background:var(--surface-2);border:1px solid var(--line);flex:none}
+.mbar-p .mk{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700;line-height:1.2}
+.mbar-p .mv{font-family:var(--font-display);font-size:22px;font-weight:600;line-height:1.1;color:var(--ink)}
+.mbar-p[data-sev="1"]{background:var(--sev1-bg);border-color:var(--sev1-line)}.mbar-p[data-sev="1"] .mv{color:var(--sev1-ink)}
+.mbar-p[data-sev="2"]{background:var(--sev2-bg);border-color:var(--sev2-line)}.mbar-p[data-sev="2"] .mv{color:var(--sev2-ink)}
+.mbar-p[data-sev="3"]{background:var(--sev3-bg);border-color:var(--sev3-line)}.mbar-p[data-sev="3"] .mv{color:var(--sev3-ink)}
+.mbar-p[data-sev="4"]{background:var(--sev4-bg);border-color:var(--sev4-line)}.mbar-p[data-sev="4"] .mv{color:var(--sev4-ink)}
+.mbar-dx{font-size:13px;color:var(--ink-soft);line-height:1.35}
+.mbar-chev{margin-left:auto;color:var(--muted);font-size:12px;flex:none}
+/* --- print --- */
+#report{display:none}
+@media print{header.top,.wrap,.mbar{display:none!important}#report{display:block}@page{margin:16mm}body{background:#fff;padding-bottom:0}}
+#report{font-family:var(--font-ui);color:#16201c}
+.rep-head{border-bottom:2px solid var(--accent);padding-bottom:10px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:flex-end}
+.rep-head h1{font-family:var(--font-display);font-size:22px;margin:0}
+.rep-head .src{font-size:12px;color:var(--muted);margin-top:3px}
+.rep-meta{font-size:12.5px;text-align:right;color:var(--ink-soft);line-height:1.6}
+.rep-dx{font-family:var(--font-display);font-size:21px;margin:0 0 4px}
+.rep-dxlabel{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.rep-section{margin-top:20px;page-break-inside:avoid}
+.rep-section h2{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-ink);border-bottom:1px solid var(--line);padding-bottom:5px;margin:0 0 10px}
+.rep-section ul{margin:0;padding-left:18px}
+.rep-section li{font-size:13px;margin-bottom:5px;line-height:1.45}
+table.rep-tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+table.rep-tbl td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.rep-tbl td.lab{color:var(--muted);width:38%}
+table.tw-tbl{width:100%;border-collapse:collapse;font-size:11.5px;font-family:var(--font-mono)}
+table.tw-tbl td,table.tw-tbl th{border:1px solid var(--line);padding:3px 4px;text-align:center}
+table.tw-tbl th{background:var(--surface-2);font-weight:700;color:var(--ink-soft)}
+table.tw-tbl td.miss{color:var(--muted);text-decoration:line-through}
+.rep-journal{font-size:12.5px;line-height:1.55;white-space:pre-wrap}
+.rep-flag{font-size:12px;color:#7A5200;font-weight:600;margin:4px 0 0}
+.rep-foot{margin-top:24px;font-size:11.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line);padding-top:10px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-inner">
+<div class="brand"><h1>Attrisjon og erosjon</h1><div class="src">Dokumentasjon av patologisk tap av tannsubstans · innslagspunkt 9 · ingen data lagres eller sendes</div></div>
+<div class="meta">
+<div class="field"><label for="repdate">Dato</label><input type="date" id="repdate"></div>
+<div class="field"><label for="repref">Pasientnummer</label><input type="text" id="repref" placeholder="Pasientnr. fra Opus" autocomplete="off"></div>
+</div></div></header>
+<div class="wrap"><div class="app">
+
+<section class="card"><div class="shead"><span class="n">1</span><h2>Grunndata</h2></div>
+<p class="sub">Alder er obligatorisk. Rundskrivet krever at skadeomfanget vurderes opp mot pasientens alder — hva som er forventet aldersbetinget slitasje, og hva som er patologisk.</p>
+<div class="row4">
+<div class="field"><label for="age">Alder (år)</label><input type="number" id="age" min="1" max="120" step="1" inputmode="numeric" placeholder="Obligatorisk"></div>
+<div class="field"><label for="gdate">Undersøkelsesdato</label><input type="date" id="gdate"></div>
+<div class="field"><label for="gref">Pasientnummer</label><input type="text" id="gref" placeholder="Pasientnr. fra Opus" autocomplete="off"></div>
+<div class="field"><label for="gtx">Behandler</label><input type="text" id="gtx" placeholder="Navn eller initialer" autocomplete="off"></div>
+</div>
+<div class="hint">Dato og pasientnummer er de samme feltene som i topplinjen — de holdes synkronisert.</div>
+<div class="clinical-note"><strong>Personvern:</strong> bruk kun pasientnummer. Skriv aldri inn pasientens navn eller fødselsnummer i dette verktøyet. Ingenting lagres i nettleseren og ingenting sendes ut av maskinen.</div>
+</section>
+
+<section class="card"><div class="shead"><span class="n">2</span><h2>TWI-registrering</h2></div>
+<p class="sub">Smith &amp; Knight Tooth Wear Index. Klikk en flate for å øke score 0 til 4 og videre til 0. Hold Shift for å gå bakover. Klikk tannnummeret for å markere tannen som manglende — den utelates da fra alle beregninger.</p>
+<div class="tw-bar">
+<label class="switch"><input type="checkbox" id="simpleMode"><span>Forenklet modus — kun okklusal/incisal flate</span></label>
+<button class="btn secondary" id="clearTeeth" type="button">Nullstill odontogram</button>
+</div>
+<div class="legend">
+<div class="lg" data-v="0"><span class="k">0</span><span class="d">Ingen tap av emaljekarakteristikk</span></div>
+<div class="lg" data-v="1"><span class="k">1</span><span class="d">Tap av emaljekarakteristikk, konturendring</span></div>
+<div class="lg" data-v="2"><span class="k">2</span><span class="d">Emaljetap med dentineksponering under 1/3 av flaten</span></div>
+<div class="lg" data-v="3"><span class="k">3</span><span class="d">Emaljetap med dentineksponering over 1/3 av flaten</span></div>
+<div class="lg" data-v="4"><span class="k">4</span><span class="d">Fullstendig emaljetap, pulpa eller sekundærdentin eksponert</span></div>
+</div>
+<div class="archwrap"><div class="archlbl">Overkjeve · 18–11 / 21–28</div><div class="arch" id="archUpper"></div></div>
+<div class="archwrap"><div class="archlbl">Underkjeve · 48–41 / 31–38</div><div class="arch" id="archLower"></div></div>
+<div class="hint">Flatene vises som B (bukkal), O (okklusal/incisal), L (lingual/palatinal) og C (cervikal). Fargestripen under hver tann viser høyeste score på tannen.</div>
+<div class="twstats">
+<div class="tws"><div class="k">Flater score 3–4</div><div class="v" id="s34">0</div></div>
+<div class="tws"><div class="k">Tenner med dentineksponering</div><div class="v" id="sDentin">0</div></div>
+<div class="tws"><div class="k">Affiserte flater</div><div class="v" id="sPct">0 %</div></div>
+<div class="tws"><div class="k">Høyeste score</div><div class="v" id="sMax">0</div></div>
+<div class="tws"><div class="k">Tenner registrert som manglende</div><div class="v" id="sMiss">0</div></div>
+</div>
+</section>
+
+<section class="card"><div class="shead"><span class="n">3</span><h2>BEWE</h2><span class="opt">Valgfri</span></div>
+<p class="sub">Basic Erosive Wear Examination. Registrer verst affiserte flate i hver sekstant. Brukes som supplement når erosjon er en aktuell etiologisk faktor.</p>
+<details class="collapse"><summary>Åpne BEWE-registrering</summary><div class="collapse-body">
+<div class="legend">
+<div class="lg" data-v="0"><span class="k">0</span><span class="d">Ingen slitasje</span></div>
+<div class="lg" data-v="1"><span class="k">1</span><span class="d">Begynnende overflatetap i emalje</span></div>
+<div class="lg" data-v="2"><span class="k">2</span><span class="d">Tydelig defekt, under 50 % av flaten</span></div>
+<div class="lg" data-v="3"><span class="k">3</span><span class="d">Defekt på 50 % eller mer av flaten</span></div>
+</div>
+<div class="bewe-grid" id="beweGrid"></div>
+<div class="twstats" style="margin-top:14px">
+<div class="tws"><div class="k">BEWE-sum (0–18)</div><div class="v" id="beweSum">—</div></div>
+<div class="tws"><div class="k">Risikonivå</div><div class="v" id="beweRisk" style="font-size:22px">—</div></div>
+</div>
+<div class="hint">Risikonivå: 2 eller lavere = ingen · 3–8 = lav · 9–13 = middels · 14 eller høyere = høy.</div>
+</div></details>
+</section>
+
+<section class="card"><div class="shead"><span class="n">4</span><h2>Okklusjon og vertikal dimensjon</h2></div>
+<p class="sub">Okklusale forhold og tapt vertikal dimensjon er sentrale for å beskrive funksjonskonsekvensen av substanstapet, og for å begrunne eventuell bittheving.</p>
+<div class="grp"><div class="lbl">Molarrelasjon høyre</div><div class="seg" role="radiogroup" aria-label="Molarrelasjon høyre">
+<label class="none"><input type="radio" name="molarR" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="molarR" value="1"><span>Kl. I</span></label>
+<label><input type="radio" name="molarR" value="2"><span>Kl. II</span></label>
+<label><input type="radio" name="molarR" value="3"><span>Kl. III</span></label></div></div>
+<div class="grp"><div class="lbl">Molarrelasjon venstre</div><div class="seg" role="radiogroup" aria-label="Molarrelasjon venstre">
+<label class="none"><input type="radio" name="molarL" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="molarL" value="1"><span>Kl. I</span></label>
+<label><input type="radio" name="molarL" value="2"><span>Kl. II</span></label>
+<label><input type="radio" name="molarL" value="3"><span>Kl. III</span></label></div></div>
+<div class="grp"><div class="lbl">Frontrelasjon</div><div class="seg" role="radiogroup" aria-label="Frontrelasjon">
+<label class="none"><input type="radio" name="front" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="front" value="normal"><span>Normal</span></label>
+<label><input type="radio" name="front" value="redusert"><span>Redusert overbitt</span></label>
+<label><input type="radio" name="front" value="kant"><span>Kant-i-kant</span></label>
+<label><input type="radio" name="front" value="apent"><span>Åpent bitt</span></label>
+<label><input type="radio" name="front" value="invertert"><span>Invertert</span></label></div></div>
+<div class="grp"><div class="lbl">Anterior guidance</div><div class="seg" role="radiogroup" aria-label="Anterior guidance">
+<label class="none"><input type="radio" name="guid" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="guid" value="intakt"><span>Intakt</span></label>
+<label><input type="radio" name="guid" value="redusert"><span>Redusert</span></label>
+<label><input type="radio" name="guid" value="tapt"><span>Tapt</span></label></div></div>
+<div class="grp"><div class="lbl">Vertikal dimensjon (OVD)</div><div class="seg" role="radiogroup" aria-label="Vertikal dimensjon">
+<label class="none"><input type="radio" name="ovd" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="ovd" value="normal"><span>Normal</span></label>
+<label><input type="radio" name="ovd" value="redusert"><span>Redusert</span></label></div>
+<div class="row3" style="margin-top:12px">
+<div class="field"><label for="ovdmm">Estimert tap av OVD (mm)</label><input type="number" id="ovdmm" min="0" max="20" step="0.5" inputmode="decimal"></div>
+<div class="field"><label for="crfront">Estimert tap av kronehøyde front (mm)</label><input type="number" id="crfront" min="0" max="20" step="0.5" inputmode="decimal"></div>
+<div class="field"><label for="crback">Estimert tap av kronehøyde posteriort (mm)</label><input type="number" id="crback" min="0" max="20" step="0.5" inputmode="decimal"></div>
+</div>
+<div class="hint">Angi hvordan estimatet er gjort — for eksempel sammenlikning med studiemodeller, skann, kliniske foto eller referansetenner uten slitasje. Bruk fritekstfeltet under punkt 6.</div>
+</div>
+</section>
+
+<section class="card"><div class="shead"><span class="n">5</span><h2>Etiologi og aktivitet</h2></div>
+<p class="sub">Substanstapet må tilskrives en identifisert årsak, og det må framgå om tilstanden er aktiv eller stabilisert. Kryss av det som er påvist, og utdyp i fritekst.</p>
+<div class="grp"><div class="lbl">Attrisjon</div><div class="checks cols2" id="grpAttr"></div>
+<div class="field" style="margin-top:10px"><label for="e_attr_txt">Utdyping — attrisjon</label><textarea id="e_attr_txt" placeholder="Beskriv facettmønster, muskelfunn, anamnese, slitasje på eksisterende skinne, okklusale forhold som predisponerer."></textarea></div></div>
+<div class="grp"><div class="lbl">Erosjon</div><div class="checks cols2" id="grpEro"></div>
+<div class="field" style="margin-top:10px"><label for="e_ero_txt">Utdyping — erosjon</label><textarea id="e_ero_txt" placeholder="Beskriv refluksanamnese, utredning, kostholdsregistrering, yrkeseksponering, salivamåling, lokalisasjonsmønster."></textarea></div></div>
+<div class="grp"><div class="lbl">Abrasjon</div><div class="checks cols2" id="grpAbr"></div>
+<div class="field" style="margin-top:10px"><label for="e_abr_txt">Utdyping — abrasjon</label><textarea id="e_abr_txt" placeholder="Beskriv pussevaner, teknikk, kraft, tannpussmiddel, andre mekaniske faktorer."></textarea></div></div>
+<div class="grp"><div class="lbl">Aktivitet</div><div class="seg" role="radiogroup" aria-label="Aktivitet">
+<label class="none"><input type="radio" name="akt" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="akt" value="aktiv"><span>Aktiv</span></label>
+<label><input type="radio" name="akt" value="stabilisert"><span>Stabilisert</span></label>
+<label><input type="radio" name="akt" value="usikker"><span>Usikker</span></label></div>
+<div class="row2" style="margin-top:12px">
+<div class="field"><label for="aktdato">Progresjon vurdert siden (dato)</label><input type="date" id="aktdato"></div>
+<div class="field"><label>Sammenlikningsgrunnlag</label><div class="checks cols2" id="grpCmp" style="gap:6px"></div></div>
+</div>
+<div class="field" style="margin-top:12px"><label for="akt_txt">Begrunnelse for aktivitetsvurderingen (obligatorisk)</label><textarea id="akt_txt" placeholder="Hva er sammenliknet, over hvilket tidsrom, og hva viser sammenlikningen? Eksempel: studiemodeller fra 2019 sammenholdt med intraoralt skann 2026 viser ytterligere reduksjon av kronehøyde i front."></textarea></div>
+<div class="cd-note">Verktøyet beregner og genererer journaltekst uansett, men rapporten merkes når aktivitetsvurderingen mangler begrunnelse.</div>
+</div>
+</section>
+
+<section class="card"><div class="shead"><span class="n">6</span><h2>Alvorlighetsvurdering mot innslagspunkt 9</h2></div>
+<p class="sub">Rundskrivet krever at «alvorlig» forstås som tilstander av vesentlig betydning for både funksjon og estetikk, som har gitt vesentlig nedsatt tannhelse. Alle sju punktene må både hakes av og begrunnes i fritekst. Fritekst under 40 tegn regnes som ufullstendig.</p>
+<div id="docList"></div>
+<div class="docstatus" id="docStatus" data-s="red"><span class="dot"></span><div><div class="dk">Dokumentasjonsstatus</div><div class="dv" id="docStatusVal">Kriterier mangler</div></div><div class="dd" id="docStatusDetail">0 av 7 punkter avhuket · 0 av 7 begrunnet</div></div>
+<div class="cd-note">Dette er en <strong>dokumentasjonsstatus</strong>, ikke en godkjenning. Grønn status betyr at verktøyet finner alle sju punktene utfylt — den sier ingenting om HELFO vil vurdere kriteriene som oppfylt.</div>
+<div class="cd-warn" id="docWarn">Dokumentasjonsstatus ikke fullstendig — rapporten og journalteksten merkes tilsvarende.</div>
+<div class="clinical-note" id="ageNote" style="display:none"></div>
+</section>
+
+<section class="card"><div class="shead"><span class="n">7</span><h2>Behandlingsvalg</h2></div>
+<p class="sub">Behandlingen skal være mest mulig vevsbesparende. Plastisk materiale er førstevalget. Velges kroneterapi, må både begrunnelsen for kroneterapi og vurderingen av funksjonsforbedringen framgå av journalen.</p>
+<div class="grp"><div class="lbl">Materialvalg</div><div class="seg" role="radiogroup" aria-label="Materialvalg">
+<label class="none"><input type="radio" name="mat" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="mat" value="plast"><span>Plastisk materiale (kompositt)</span></label>
+<label><input type="radio" name="mat" value="krone"><span>Kroneterapi</span></label>
+<label><input type="radio" name="mat" value="komb"><span>Kombinasjon</span></label></div>
+<div class="clinical-note">Plastisk materiale i kompositt er førstevalget ved oppbygging etter patologisk tap av tannsubstans. Kroneterapi forutsetter at det er journalført hvorfor plastisk materiale ikke er tilstrekkelig, og hvorfor krone gir vesentlig funksjonsforbedring sammenliknet med annen behandling.</div>
+</div>
+<div class="grp" id="croneBlock" style="display:none">
+<div class="lbl">Obligatorisk journalføring ved kroneterapi</div>
+<div class="field"><label for="krone_a">a) Begrunnelse for kroneterapi</label><textarea id="krone_a" placeholder="Hvorfor er plastisk materiale ikke tilstrekkelig i dette kasuset? Restaureringsbehov, gjenværende tannsubstans, retensjon, tidligere mislykket plastisk oppbygging, belastning."></textarea></div>
+<div class="field" style="margin-top:12px"><label for="krone_b">b) Vurdering av vesentlig funksjonsforbedring sammenliknet med annen behandling</label><textarea id="krone_b" placeholder="Hvilken funksjonsforbedring gir kroneterapi ut over alternativene, og hvorfor er den vesentlig? Sammenlikn konkret med plastisk oppbygging."></textarea></div>
+</div>
+<div class="grp"><div class="lbl">Planlagt oppbygging</div>
+<div class="field"><label for="planteeth">Tenner som planlegges bygget opp</label><input type="text" id="planteeth" placeholder="Eksempel: 16, 15, 14, 24, 25, 26, 36, 46" autocomplete="off"></div>
+<div class="field" style="margin-top:12px"><label for="seq">Behandlingssekvens</label><textarea id="seq" placeholder="Rekkefølge, faser, eventuell testperiode med skinne, provisorier, kontrollpunkter underveis."></textarea></div>
+<div class="field" style="margin-top:12px"><label for="bitt">Bittheving</label><textarea id="bitt" placeholder="Er bittheving planlagt? Hvor mye, hvordan er den testet ut, og hvordan følges den opp?"></textarea></div>
+</div>
+<div class="grp"><div class="lbl">Oppfølging</div><div class="seg" role="radiogroup" aria-label="Oppfølgingsintervall">
+<label class="none"><input type="radio" name="oppf" value="na" checked><span>Ikke angitt</span></label>
+<label><input type="radio" name="oppf" value="3"><span>3 mnd</span></label>
+<label><input type="radio" name="oppf" value="6"><span>6 mnd</span></label>
+<label><input type="radio" name="oppf" value="12"><span>12 mnd</span></label>
+<label><input type="radio" name="oppf" value="annet"><span>Annet intervall</span></label></div>
+<div class="field" style="margin-top:12px"><label for="oppf_txt">Oppfølgingsplan</label><textarea id="oppf_txt" placeholder="Hva kontrolleres, hvordan monitoreres progresjon (foto, skann, modeller), og hvilke forebyggende tiltak er iverksatt?"></textarea></div>
+</div>
+</section>
+
+<section class="card"><div class="shead"><span class="n">8</span><h2>Generert journaltekst</h2></div>
+<p class="sub">Sammenhengende journaltekst basert på alt som er registrert over. Ren tekst uten formatering — kan limes rett inn i Opus. Teksten oppdateres fortløpende.</p>
+<textarea class="journal" id="journalText" readonly aria-label="Generert journaltekst"></textarea>
+<div class="toolbar"><span class="flash" id="copyFlash" role="status"></span><button class="btn" id="copyBtn" type="button">Kopier journaltekst</button></div>
+</section>
+
+<section class="card" id="resultCard"><div class="shead"><span class="n">∑</span><h2>Resultat</h2></div>
+<p class="sub">Samlet status for registreringen. Verktøyet konkluderer ikke om stønadsrett — det viser hva som er dokumentert og hva som mangler.</p>
+<div id="liveResult" aria-live="polite" aria-atomic="true">
+<div class="diag-pills">
+<div class="pill" id="pillDentin"><div class="k">Dentineksponering</div><div class="v" id="pDentin">0</div><div class="vsub">tenner med score 2 eller høyere</div></div>
+<div class="pill" id="pill34"><div class="k">Flater score 3–4</div><div class="v" id="p34">0</div><div class="vsub" id="p34sub">av 0 registrerte flater</div></div>
+<div class="pill" id="pillBewe"><div class="k">BEWE</div><div class="v" id="pBewe">—</div><div class="vsub" id="pBeweSub">ikke registrert</div></div>
+<div class="pill" id="pillDoc"><div class="k">Dokumentasjon</div><div class="v" id="pDoc" style="font-size:24px">RØD</div><div class="vsub" id="pDocSub">0 av 7 punkter fullstendig</div></div>
+</div>
+<div class="dx"><div class="dxk">Samlet vurdering</div><div class="dxv" id="dxText"><span class="dxhint">Registrer TWI-score og alder for å starte.</span></div></div>
+<div class="dx"><div class="dxk">Dokumentasjonsstatus</div><div class="dxv" style="margin-top:6px"><span class="statuschip" id="statusChip" data-state="red">Kriterier mangler</span></div></div>
+</div>
+<div class="warnbanner" id="warnBanner" role="status"></div>
+<div class="ratiobox" id="ratioBox" style="display:none"><span class="rk">Affiserte flater av registrerte flater</span><span class="rv" id="ratioVal">–</span></div>
+<div class="whycols">
+<div class="why"><h3>Begrunnelse — slitasjeomfang</h3><ul id="whyWear"><li>Venter på registrering.</li></ul></div>
+<div class="why"><h3>Begrunnelse — dokumentasjonsstatus</h3><ul id="whyDoc"><li>Venter på registrering.</li></ul></div>
+<div class="why"><h3>Begrunnelse — behandlingsvalg</h3><ul id="whyTx"><li>Venter på registrering.</li></ul></div>
+</div>
+<div class="toolbar"><button class="btn secondary" id="resetBtn" type="button">Nullstill</button><button class="btn" id="printBtn" type="button">Skriv ut rapport</button></div>
+<p class="note">Dokumentasjonsstøtte for journalføring ved patologisk tap av tannsubstans — ikke en garanti for stønadsrett. HELFO forhåndsgodkjenner ikke kasus: vurderingen gjøres etterskuddsvis, og bevisbyrden ligger hos behandlende tannlege. Verktøyet erstatter ikke klinisk skjønn, og gir ingen opplysninger om takster, refusjonsbeløp eller pasientbetaling. Ingen data lagres eller sendes. Bruk kun pasientnummer — skriv aldri inn navn eller fødselsnummer.</p>
+</section>
+
+</div></div>
+<button class="mbar" id="mobileBar" type="button" aria-controls="resultCard">
+<span class="mbar-p" id="mDocPill"><span class="mk">Dok.</span><span class="mv" id="mDoc">RØD</span></span>
+<span class="mbar-p" id="mDentinPill"><span class="mk">Dentin</span><span class="mv" id="mDentin">0</span></span>
+<span class="mbar-p" id="m34Pill"><span class="mk">Score 3–4</span><span class="mv" id="m34">0</span></span>
+<span class="mbar-dx" id="mDx">Registrer TWI-score og alder for å starte.</span>
+<span class="mbar-chev" aria-hidden="true">Gå til resultat ▾</span>
+</button>
+<div id="report"></div>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const gv=n=>{const el=document.querySelector('input[name="'+n+'"]:checked');return !el||el.value==='na'?null:el.value};
+const num=id=>{const v=parseFloat($(id).value);return isNaN(v)?null:v};
+const chk=id=>$(id).checked;
+const txt=id=>($(id).value||'').trim();
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nf=n=>String(n).replace('.',',');
+const tn=n=>n===1?'1 tann':n+' tenner';
+const pk=n=>n===1?'1 punkt':n+' punkter';
+const MIN_TXT=40;
+
+const UPPER=['18','17','16','15','14','13','12','11','21','22','23','24','25','26','27','28'];
+const LOWER=['48','47','46','45','44','43','42','41','31','32','33','34','35','36','37','38'];
+const ALL=UPPER.concat(LOWER);
+const SURFS=[['b','B'],['o','O'],['l','L'],['c','C']];
+const SURFNAME={b:'bukkal',o:'okklusal/incisal',l:'lingual/palatinal',c:'cervikal'};
+const teeth={};
+ALL.forEach(id=>{teeth[id]={miss:false,b:0,o:0,l:0,c:0}});
+
+const SEXT=[['bw1','17–14','sekstant 1'],['bw2','13–23','sekstant 2'],['bw3','24–27','sekstant 3'],['bw4','37–34','sekstant 4'],['bw5','33–43','sekstant 5'],['bw6','44–47','sekstant 6']];
+
+const ETI=[
+ {key:'attr',grp:'grpAttr',label:'Attrisjon',note:'e_attr_txt',items:[
+  ['e_facet','Okklusale slitasjefacetter','matchende facetter i sentral okklusjon eller lateroprotrusive bevegelser','okklusale slitasjefacetter'],
+  ['e_muskel','Muskelømhet','palpasjonsømme tyggemuskler eller morgenstivhet','palpasjonsøm tyggemuskulatur'],
+  ['e_anam','Anamnestisk bruksisme','pasient- eller partneropplysning om tanngnissing eller pressing','anamnestisk bruksisme'],
+  ['e_skinne','Slitasje på bittskinne','dokumentert slitasje eller perforasjon av eksisterende skinne','slitasje på bittskinne'],
+  ['e_okk','Predisponerende okklusjonsforhold','interferenser, manglende eller redusert anterior guidance, tapt posterior støtte','predisponerende okklusjonsforhold']]},
+ {key:'ero',grp:'grpEro',label:'Erosjon',note:'e_ero_txt',items:[
+  ['e_gerd','GERD eller refluks','diagnostisert eller anamnestisk, ev. henvist for utredning','GERD/refluks'],
+  ['e_opp','Oppkast','spiseforstyrrelse, graviditetsrelatert eller annen årsak','oppkast'],
+  ['e_kost','Kosthold','syreholdig mat og drikke, frekvens og inntaksmønster','syreholdig kosthold'],
+  ['e_yrke','Yrkeseksponering','eksponering for syre i arbeidsmiljø','yrkeseksponering for syre'],
+  ['e_hypo','Hyposalivasjon','munntørrhet, medikamentbivirkning, redusert salivasekresjon','hyposalivasjon']]},
+ {key:'abr',grp:'grpAbr',label:'Abrasjon',note:'e_abr_txt',items:[
+  ['e_puss','Pussevaner','teknikk, kraft, hardhet på bust, abrasivt tannpussmiddel','pussevaner'],
+  ['e_mek','Andre mekaniske faktorer','yrkes- eller vanebetinget mekanisk slitasje, piercing, tannstikker','andre mekaniske faktorer']]}
+];
+const CMP=[['c_foto','Kliniske foto'],['c_mod','Studiemodeller'],['c_skann','Intraoralt skann'],['c_rtg','Røntgen']];
+const DOC=[
+ ['d1','Betydning for funksjon','Beskriv konkret hvordan tilstanden påvirker tygge- og bittfunksjon.'],
+ ['d2','Betydning for estetikk','Beskriv det estetiske utslaget: kronehøyde, form, farge, synlighet ved tale og smil.'],
+ ['d3','Vesentlig nedsatt tannhelse','Beskriv hvorfor tannhelsen samlet er vesentlig nedsatt, ikke bare lokalt på enkelttenner.'],
+ ['d4','Skadeomfang vurdert opp mot pasientens alder','Sett omfanget i forhold til hva som forventes som aldersbetinget slitasje.'],
+ ['d5','Langtidsprognose ubehandlet','Beskriv forventet utvikling uten behandling: progresjonstakt, pulpanærhet, tap av gjenværende tannsubstans.'],
+ ['d6','Basisdokumentasjon foreligger','Angi hva som foreligger: kliniske foto, intraoralt skann, røntgen, studiemodeller.'],
+ ['d7','Dokumentasjonen er ført før behandlingsstart','Angi dato og hva som ble dokumentert før behandlingen ble påbegynt.']
+];
+const L={
+ molar:{'1':'kl. I','2':'kl. II','3':'kl. III'},
+ front:{normal:'normal',redusert:'redusert overbitt',kant:'kant-i-kant',apent:'åpent bitt',invertert:'invertert'},
+ guid:{intakt:'intakt',redusert:'redusert',tapt:'tapt'},
+ ovd:{normal:'normal',redusert:'redusert'},
+ akt:{aktiv:'aktiv',stabilisert:'stabilisert',usikker:'usikker'},
+ mat:{plast:'plastisk materiale (kompositt)',krone:'kroneterapi',komb:'kombinasjon av plastisk materiale og kroneterapi'},
+ oppf:{'3':'3 måneder','6':'6 måneder','12':'12 måneder',annet:'annet intervall'}
+};
+
+/* ---------- bygg odontogram ---------- */
+function toothEl(id){
+  const d=document.createElement('div');d.className='tooth';d.dataset.t=id;
+  let h='<button class="tnum" type="button" data-act="miss" title="Marker '+id+' som manglende">'+id+'</button><div class="surfs">';
+  SURFS.forEach(s=>{h+='<button class="surf" type="button" data-s="'+s[0]+'" data-v="0" title="Tann '+id+' · '+SURFNAME[s[0]]+'"><span class="sl">'+s[1]+'</span><span class="sv">0</span></button>'});
+  h+='</div><div class="tbar" data-v="0"></div>';
+  d.innerHTML=h;return d;
+}
+function buildArch(el,list){
+  const a=document.createElement('div');a.className='quad';
+  const b=document.createElement('div');b.className='quad';
+  list.slice(0,8).forEach(t=>a.appendChild(toothEl(t)));
+  list.slice(8).forEach(t=>b.appendChild(toothEl(t)));
+  el.appendChild(a);el.appendChild(b);
+}
+buildArch($('archUpper'),UPPER);buildArch($('archLower'),LOWER);
+
+function onArchClick(e){
+  const miss=e.target.closest('[data-act="miss"]');
+  const surf=e.target.closest('.surf');
+  const tEl=e.target.closest('.tooth');if(!tEl)return;
+  const id=tEl.dataset.t;
+  if(miss){teeth[id].miss=!teeth[id].miss;tEl.classList.toggle('missing',teeth[id].miss);recompute();return}
+  if(surf){
+    if(teeth[id].miss)return;
+    const s=surf.dataset.s;
+    let v=teeth[id][s];
+    v=e.shiftKey?(v+4)%5:(v+1)%5;
+    teeth[id][s]=v;
+    surf.dataset.v=v;surf.querySelector('.sv').textContent=v;
+    paintTooth(id);recompute();
+  }
+}
+$('archUpper').addEventListener('click',onArchClick);
+$('archLower').addEventListener('click',onArchClick);
+function paintTooth(id){
+  const el=document.querySelector('.tooth[data-t="'+id+'"]');
+  const act=activeSurfs();let mx=0;act.forEach(s=>{if(teeth[id][s]>mx)mx=teeth[id][s]});
+  el.querySelector('.tbar').dataset.v=mx;
+}
+function repaintAll(){ALL.forEach(id=>{
+  const el=document.querySelector('.tooth[data-t="'+id+'"]');
+  el.classList.toggle('missing',teeth[id].miss);
+  SURFS.forEach(s=>{const b=el.querySelector('.surf[data-s="'+s[0]+'"]');b.dataset.v=teeth[id][s[0]];b.querySelector('.sv').textContent=teeth[id][s[0]]});
+  paintTooth(id);
+})}
+const activeSurfs=()=>chk('simpleMode')?['o']:['b','o','l','c'];
+
+/* ---------- bygg BEWE ---------- */
+(function(){let h='';SEXT.forEach(s=>{
+  h+='<div class="sextant"><div class="sx">'+s[1]+'<em>'+s[2]+'</em></div><div class="seg" role="radiogroup" aria-label="BEWE '+s[2]+'">';
+  h+='<label class="none"><input type="radio" name="'+s[0]+'" value="na" checked><span>—</span></label>';
+  for(let i=0;i<=3;i++)h+='<label><input type="radio" name="'+s[0]+'" value="'+i+'"><span>'+i+'</span></label>';
+  h+='</div></div>'});$('beweGrid').innerHTML=h})();
+
+/* ---------- bygg etiologi og sjekkliste ---------- */
+ETI.forEach(g=>{let h='';g.items.forEach(it=>{
+  h+='<label class="check"><input type="checkbox" id="'+it[0]+'"><span class="txt">'+it[1]+'<small>'+it[2]+'</small></span></label>'});
+  $(g.grp).innerHTML=h});
+(function(){let h='';CMP.forEach(c=>{h+='<label class="check" style="padding:7px 10px"><input type="checkbox" id="'+c[0]+'"><span class="txt" style="font-size:12.5px">'+c[1]+'</span></label>'});$('grpCmp').innerHTML=h})();
+(function(){let h='';DOC.forEach(d=>{
+  h+='<div class="doc-item"><label class="check"><input type="checkbox" id="'+d[0]+'"><span class="txt">'+d[1]+'<small>'+d[2]+'</small></span><span class="cnt" id="'+d[0]+'c">0</span></label>';
+  h+='<textarea id="'+d[0]+'t" placeholder="Begrunnelse (minst '+MIN_TXT+' tegn)" aria-label="'+d[1]+' — begrunnelse"></textarea></div>'});
+  $('docList').innerHTML=h})();
+
+/* ---------- beregning ---------- */
+function twiStats(){
+  const act=activeSurfs();
+  const st={present:0,missing:0,surfTot:0,surfAff:0,surf34:0,dentin:0,max:0,maxTeeth:[],worst:[],dentinTeeth:[],perTooth:{},any:false};
+  ALL.forEach(id=>{
+    const t=teeth[id];
+    if(t.miss){st.missing++;st.perTooth[id]=null;return}
+    st.present++;let mx=0;
+    act.forEach(s=>{const v=t[s];st.surfTot++;if(v>=1){st.surfAff++;st.any=true}if(v>=3)st.surf34++;if(v>mx)mx=v});
+    st.perTooth[id]=mx;
+    if(mx>=2){st.dentin++;st.dentinTeeth.push(id)}
+    if(mx>=3)st.worst.push(id);
+    if(mx>st.max)st.max=mx;
+  });
+  ALL.forEach(id=>{if(st.perTooth[id]===st.max&&st.max>0)st.maxTeeth.push(id)});
+  st.pct=st.surfTot?Math.round(st.surfAff/st.surfTot*100):0;
+  return st;
+}
+function beweStats(){
+  const vals=SEXT.map(s=>{const v=gv(s[0]);return v===null?null:parseInt(v,10)});
+  const set=vals.filter(v=>v!==null);
+  const sum=set.reduce((a,b)=>a+b,0);
+  let risk=null;
+  if(set.length===6)risk=sum<=2?'ingen':sum<=8?'lav':sum<=13?'middels':'høy';
+  return {vals:vals,count:set.length,sum:sum,risk:risk,complete:set.length===6,any:set.length>0};
+}
+const RISKSEV={ingen:0,lav:2,middels:3,'høy':4};
+const RISKTXT={ingen:'ingen risiko',lav:'lav risiko',middels:'middels risiko','høy':'høy risiko'};
+function docStats(){
+  let checked=0,full=0;const missChk=[],missTxt=[];
+  DOC.forEach(d=>{
+    const c=chk(d[0]),t=txt(d[0]+'t');
+    if(c)checked++;else missChk.push(d[1]);
+    if(c&&t.length>=MIN_TXT)full++;else if(c)missTxt.push(d[1]);
+  });
+  const state=checked<DOC.length?'red':(full<DOC.length?'yellow':'green');
+  return {checked:checked,full:full,missChk:missChk,missTxt:missTxt,state:state};
+}
+function ageThreshold(a){return a<30?2:a<40?3:a<50?4:a<60?6:8}
+function etiologyList(){
+  const out=[];
+  ETI.forEach(g=>{const hit=g.items.filter(it=>chk(it[0])).map(it=>it[3]);
+    if(hit.length)out.push({label:g.label,items:hit,note:txt(g.note)});
+    else if(txt(g.note))out.push({label:g.label,items:[],note:txt(g.note)})});
+  return out;
+}
+function cmpList(){return CMP.filter(c=>chk(c[0])).map(c=>c[1].toLowerCase())}
+const wantsCrown=()=>['krone','komb'].indexOf(gv('mat'))>=0;
+function sevOf(n,a,b,c){return n<=0?null:n<a?'2':n<b?'3':'4'}
+
+/* ---------- rendering ---------- */
+function renderList(el,arr){
+  if(!arr.length){el.innerHTML='<li>Ingen merknader.</li>';return}
+  el.innerHTML=arr.map(x=>'<li'+(x.warn?' class="warn"':'')+'>'+esc(x.t)+'</li>').join('');
+}
+function setPill(el,sev){if(sev)el.dataset.sev=sev;else el.removeAttribute('data-sev')}
+
+function recompute(){
+  document.body.classList.toggle('simple',chk('simpleMode'));
+  ALL.forEach(paintTooth);
+  const tw=twiStats(),bw=beweStats(),doc=docStats(),age=num('age');
+  $('croneBlock').style.display=wantsCrown()?'':'none';
+
+  /* seksjon 2-teller */
+  $('s34').textContent=tw.surf34;$('sDentin').textContent=tw.dentin;
+  $('sPct').textContent=tw.pct+' %';$('sMax').textContent=tw.max;$('sMiss').textContent=tw.missing;
+  /* seksjon 3-teller */
+  $('beweSum').textContent=bw.any?(bw.sum+(bw.complete?'':' *')):'—';
+  $('beweRisk').textContent=bw.risk?bw.risk.charAt(0).toUpperCase()+bw.risk.slice(1):'—';
+  /* seksjon 6-tellere */
+  DOC.forEach(d=>{const n=txt(d[0]+'t').length,e=$(d[0]+'c');
+    e.textContent=n;e.dataset.s=n>=MIN_TXT?'ok':n>0?'low':'';});
+  const dsLab={red:'Kriterier mangler',yellow:'Haket av, men begrunnelse er ufullstendig',green:'Alle punkter utfylt'}[doc.state];
+  $('docStatus').dataset.s=doc.state;$('docStatusVal').textContent=dsLab;
+  $('docStatusDetail').textContent=doc.checked+' av '+DOC.length+' punkter avhuket · '+doc.full+' av '+DOC.length+' begrunnet med minst '+MIN_TXT+' tegn';
+  $('docWarn').style.display=doc.state==='green'?'none':'block';
+
+  /* aldersmerknad */
+  const an=$('ageNote');
+  if(age===null){an.style.display='block';an.innerHTML='<strong>Alder mangler.</strong> Rundskrivet krever at skadeomfanget vurderes opp mot pasientens alder. Fyll inn alder under punkt 1 for at verktøyet skal kunne sette registreringen i sammenheng med alderen.'}
+  else if(!tw.any){an.style.display='block';an.innerHTML='<strong>Ingen slitasje registrert.</strong> Odontogrammet under punkt 2 er tomt. Alvorlighetsvurderingen står da uten registrert slitasjeomfang å vise til.'}
+  else{
+    const thr=ageThreshold(age);
+    if(tw.dentin<thr&&tw.surf34===0){
+      an.style.display='block';
+      an.innerHTML='<strong>Merknad om omfang mot alder.</strong> Registrert slitasje — '+tn(tw.dentin)+' med dentineksponering og ingen flater med score 3–4 — er beskjeden sett i forhold til oppgitt alder på '+age+' år. Alvorlighetskriteriet kan bli krevende å underbygge. Kontroller at registreringen er fullstendig, og at konsekvensen for funksjon og estetikk er konkret beskrevet. Dette er en merknad, ikke en sperre.';
+    } else if(age>=60&&tw.surf34<3){
+      an.style.display='block';
+      an.innerHTML='<strong>Merknad om omfang mot alder.</strong> Ved alder '+age+' år må det framgå av journalen at slitasjen overstiger det som forventes som aldersbetinget. Beskriv konkret hvorfor omfanget er patologisk og ikke fysiologisk.';
+    } else an.style.display='none';
+  }
+
+  /* resultatpanel */
+  $('pDentin').textContent=tw.dentin;setPill($('pillDentin'),sevOf(tw.dentin,4,8));
+  $('p34').textContent=tw.surf34;$('p34sub').textContent='av '+tw.surfTot+' registrerte flater';
+  setPill($('pill34'),sevOf(tw.surf34,3,6));
+  $('pBewe').textContent=bw.any?bw.sum:'—';
+  $('pBeweSub').textContent=bw.any?(bw.complete?RISKTXT[bw.risk]:(bw.count+' av 6 sekstanter registrert')):'ikke registrert';
+  setPill($('pillBewe'),bw.risk?(RISKSEV[bw.risk]?String(RISKSEV[bw.risk]):null):null);
+  const docWord={red:'RØD',yellow:'GUL',green:'GRØNN'}[doc.state];
+  $('pDoc').textContent=docWord;$('pDocSub').textContent=doc.full+' av '+DOC.length+' punkter fullstendig';
+  setPill($('pillDoc'),{red:'4',yellow:'3',green:'1'}[doc.state]);
+  $('statusChip').dataset.state=doc.state;$('statusChip').textContent=docWord+' · '+dsLab;
+
+  if(!tw.any&&!bw.any)$('dxText').innerHTML='<span class="dxhint">Registrer TWI-score under punkt 2 for å starte.</span>';
+  else{
+    let s='Registrert tap av tannsubstans på '+tw.surfAff+' av '+tw.surfTot+' vurderte flater ('+tw.pct+' %)';
+    s+=tw.dentin?', med dentineksponering på '+tn(tw.dentin):', uten dentineksponering';
+    s+='. Høyeste TWI-score er '+tw.max+'.';
+    $('dxText').textContent=s;
+  }
+  $('ratioBox').style.display=tw.surfTot?'flex':'none';
+  $('ratioVal').textContent=tw.surfAff+' / '+tw.surfTot+' = '+tw.pct+' %';
+
+  /* advarsler */
+  const warns=[];
+  if(age===null)warns.push({t:'Alder er ikke angitt. Alder er obligatorisk for vurderingen av skadeomfang mot forventet aldersbetinget slitasje.',c:'err'});
+  if(!tw.any)warns.push({t:'Ingen TWI-score er registrert. Rapporten inneholder da ingen objektiv beskrivelse av slitasjeomfanget.',c:'err'});
+  if(chk('simpleMode')&&tw.any)warns.push({t:'Forenklet modus er aktiv — kun okklusal/incisal flate er vurdert. Bukkale, linguale og cervikale flater inngår ikke i tallene.',c:'neutral'});
+  if(doc.state!=='green'){const dp=[];if(doc.missChk.length)dp.push(pk(doc.missChk.length)+' er ikke avhuket');if(doc.missTxt.length)dp.push(pk(doc.missTxt.length)+' mangler tilstrekkelig begrunnelse');warns.push({t:'Dokumentasjonsstatus '+docWord+': '+dp.join(' og ')+'.'})}
+  if(!chk('d7'))warns.push({t:'Det er ikke bekreftet at dokumentasjonen er ført før behandlingsstart. Dokumentasjon som først føres etter at behandlingen er påbegynt, kan vanskelig underbygge utgangstilstanden.'});
+  if(!chk('d6'))warns.push({t:'Basisdokumentasjon (foto, skann, røntgen eller modeller) er ikke bekreftet.'});
+  if(gv('akt')===null)warns.push({t:'Aktivitet er ikke angitt. Det bør framgå om tilstanden er aktiv, stabilisert eller usikker.'});
+  else if(txt('akt_txt').length<MIN_TXT)warns.push({t:'Aktivitetsvurderingen mangler tilstrekkelig begrunnelse. Angi hva som er sammenliknet og over hvilket tidsrom.'});
+  if(gv('mat')===null)warns.push({t:'Materialvalg er ikke angitt.',c:'neutral'});
+  if(wantsCrown()){
+    if(txt('krone_a').length<MIN_TXT)warns.push({t:'Kroneterapi er valgt, men begrunnelsen for kroneterapi er ikke journalført.',c:'err'});
+    if(txt('krone_b').length<MIN_TXT)warns.push({t:'Kroneterapi er valgt, men vurderingen av vesentlig funksjonsforbedring sammenliknet med annen behandling er ikke journalført.',c:'err'});
+  }
+  if(bw.any&&!bw.complete)warns.push({t:'BEWE er påbegynt, men bare '+bw.count+' av 6 sekstanter er registrert. Summen er derfor ikke sammenliknbar med risikonivåene.',c:'neutral'});
+  const wb=$('warnBanner');
+  wb.style.display=warns.length?'flex':'none';
+  wb.innerHTML=warns.map(w=>'<div class="w'+(w.c?' '+w.c:'')+'">'+esc(w.t)+'</div>').join('');
+
+  /* begrunnelseslister */
+  renderList($('whyWear'),wearWhy(tw,bw,age));
+  renderList($('whyDoc'),docWhy(doc));
+  renderList($('whyTx'),txWhy());
+
+  /* sticky statuslinje */
+  $('mDoc').textContent=docWord;$('mDocPill').dataset.sev={red:'4',yellow:'3',green:'1'}[doc.state];
+  $('mDentin').textContent=tw.dentin;setPill($('mDentinPill'),sevOf(tw.dentin,4,8));
+  $('m34').textContent=tw.surf34;setPill($('m34Pill'),sevOf(tw.surf34,3,6));
+  const mp=[];if(doc.missChk.length)mp.push(pk(doc.missChk.length)+' ikke avhuket');if(doc.missTxt.length)mp.push(pk(doc.missTxt.length)+' uten tilstrekkelig begrunnelse');
+  $('mDx').textContent=doc.state==='green'?'Alle sju dokumentasjonspunkter er avhuket og begrunnet.':mp.join(' · ')+'.';
+
+  const journal=buildJournal(tw,bw,doc,age);
+  $('journalText').value=journal;
+  buildReport(tw,bw,doc,age,warns,journal);
+}
+
+/* ---------- begrunnelseslister ---------- */
+function wearWhy(tw,bw,age){
+  const r=[];
+  if(!tw.any&&!bw.any){r.push({t:'Ingen slitasje registrert ennå.'});return r}
+  r.push({t:tw.present+' tenner vurdert, '+tw.missing+' registrert som manglende og utelatt fra beregningen.'});
+  r.push({t:(chk('simpleMode')?'Forenklet modus: kun okklusal/incisal flate per tann. ':'Fire flater per tann vurdert. ')+tw.surfAff+' av '+tw.surfTot+' flater har score 1 eller høyere ('+tw.pct+' %).'});
+  if(tw.surf34)r.push({t:(tw.surf34===1?'1 flate har':tw.surf34+' flater har')+' score 3–4, det vil si dentineksponering over 1/3 av flaten eller fullstendig emaljetap.',warn:tw.surf34>=3});
+  else r.push({t:'Ingen flater har score 3–4.'});
+  if(tw.dentin)r.push({t:tn(tw.dentin)+' har dentineksponering (score 2 eller høyere på minst én flate): '+tw.dentinTeeth.join(', ')+'.'});
+  else r.push({t:'Ingen tenner har registrert dentineksponering.'});
+  if(tw.max)r.push({t:'Høyeste score er '+tw.max+', registrert på '+tw.maxTeeth.join(', ')+'.'});
+  if(bw.complete)r.push({t:'BEWE-sum '+bw.sum+' av 18 tilsvarer '+RISKTXT[bw.risk]+'.'});
+  else if(bw.any)r.push({t:'BEWE er ufullstendig: '+bw.count+' av 6 sekstanter registrert, delsum '+bw.sum+'.'});
+  if(age!==null&&tw.any){
+    const thr=ageThreshold(age);
+    if(tw.dentin<thr&&tw.surf34===0)r.push({t:'Omfanget er beskjedent sett mot alder '+age+' år. Alvorlighetskriteriet kan bli krevende å underbygge.',warn:true});
+    else r.push({t:'Omfanget er registrert opp mot oppgitt alder på '+age+' år.'});
+  } else if(age===null)r.push({t:'Alder mangler — omfanget kan ikke settes i sammenheng med forventet aldersbetinget slitasje.',warn:true});
+  return r;
+}
+function docWhy(doc){
+  const r=[];
+  r.push({t:doc.checked+' av '+DOC.length+' punkter er avhuket, og '+doc.full+' av '+DOC.length+' har begrunnelse på minst '+MIN_TXT+' tegn.'});
+  if(doc.missChk.length)r.push({t:'Ikke avhuket: '+doc.missChk.join('; ')+'.',warn:true});
+  if(doc.missTxt.length)r.push({t:'Avhuket, men begrunnelsen er tom eller under '+MIN_TXT+' tegn: '+doc.missTxt.join('; ')+'.',warn:true});
+  if(doc.state==='green')r.push({t:'Alle sju punkter er utfylt. Statusen er en dokumentasjonsstatus, ikke en godkjenning — HELFO vurderer kasus etterskuddsvis.'});
+  else r.push({t:'Rapporten og journalteksten merkes «dokumentasjonsstatus ikke fullstendig» så lenge punkter mangler.'});
+  return r;
+}
+function txWhy(){
+  const r=[],mat=gv('mat');
+  if(!mat){r.push({t:'Materialvalg er ikke angitt.'});return r}
+  r.push({t:'Valgt materiale: '+L.mat[mat]+'.'});
+  if(mat==='plast')r.push({t:'Plastisk materiale er førstevalget og det mest vevsbesparende alternativet.'});
+  if(wantsCrown()){
+    r.push({t:'Kroneterapi krever at både begrunnelsen for kroneterapi og vurderingen av funksjonsforbedringen er journalført.'});
+    r.push({t:'Begrunnelse for kroneterapi: '+(txt('krone_a').length>=MIN_TXT?'journalført.':'mangler eller er for kortfattet.'),warn:txt('krone_a').length<MIN_TXT});
+    r.push({t:'Vurdering av vesentlig funksjonsforbedring: '+(txt('krone_b').length>=MIN_TXT?'journalført.':'mangler eller er for kortfattet.'),warn:txt('krone_b').length<MIN_TXT});
+  }
+  if(txt('planteeth'))r.push({t:'Planlagt oppbygging: '+txt('planteeth')+'.'});
+  if(txt('bitt'))r.push({t:'Bittheving er beskrevet.'});
+  const o=gv('oppf');
+  r.push({t:o?'Oppfølgingsintervall: '+L.oppf[o]+'.':'Oppfølgingsintervall er ikke angitt.',warn:!o});
+  return r;
+}
+
+/* ---------- journaltekst ---------- */
+function fmtDate(v){if(!v)return null;const p=v.split('-');return p.length===3?p[2]+'.'+p[1]+'.'+p[0]:v}
+function joinNo(a){if(!a.length)return '';if(a.length===1)return a[0];return a.slice(0,-1).join(', ')+' og '+a[a.length-1]}
+function buildJournal(tw,bw,doc,age){
+  const P=[];
+  /* 1 funn */
+  let f=[];
+  f.push('Klinisk undersøkelse med registrering av tap av tannsubstans etter Smith & Knight Tooth Wear Index (TWI)'+(chk('simpleMode')?', forenklet registrering med kun okklusal/incisal flate per tann':', fire flater per tann')+'.');
+  f.push(tw.present+' tenner vurdert'+(tw.missing?', '+tw.missing+' tenner registrert som manglende og utelatt fra beregningen':'')+'.');
+  if(tw.any){
+    f.push('Slitasje registrert på '+tw.surfAff+' av '+tw.surfTot+' flater ('+tw.pct+' %).');
+    f.push(tw.surf34?tw.surf34+' flater har score 3–4.':'Ingen flater har score 3–4.');
+    f.push(tw.dentin?tn(tw.dentin)+' har dentineksponering, score 2 eller høyere på minst én flate: '+tw.dentinTeeth.join(', ')+'.':'Ingen tenner har dentineksponering.');
+    f.push('Høyeste registrerte score er '+tw.max+', på '+tw.maxTeeth.join(', ')+'.');
+  } else f.push('Ingen slitasje registrert i odontogrammet.');
+  if(bw.complete)f.push('BEWE-registrering gir sum '+bw.sum+' av 18, som tilsvarer '+RISKTXT[bw.risk]+'.');
+  else if(bw.any)f.push('BEWE er delvis registrert, '+bw.count+' av 6 sekstanter, delsum '+bw.sum+'. Ufullstendig grunnlag for risikonivå.');
+  P.push(f.join(' '));
+  /* 2 okklusjon */
+  let o=[];
+  const mr=gv('molarR'),ml=gv('molarL');
+  if(mr||ml)o.push('Molarrelasjon '+(mr?L.molar[mr]+' høyre':'ikke angitt høyre')+', '+(ml?L.molar[ml]+' venstre':'ikke angitt venstre')+'.');
+  if(gv('front'))o.push('Frontrelasjon '+L.front[gv('front')]+'.');
+  if(gv('guid'))o.push('Anterior guidance '+L.guid[gv('guid')]+'.');
+  if(gv('ovd'))o.push('Vertikal dimensjon vurdert som '+L.ovd[gv('ovd')]+(num('ovdmm')!==null?', estimert tap '+nf(num('ovdmm'))+' mm':'')+'.');
+  else if(num('ovdmm')!==null)o.push('Estimert tap av vertikal dimensjon '+nf(num('ovdmm'))+' mm.');
+  const cf=num('crfront'),cb=num('crback');
+  if(cf!==null||cb!==null)o.push('Estimert tap av kronehøyde'+(cf!==null?' front '+nf(cf)+' mm':'')+(cf!==null&&cb!==null?',':'')+(cb!==null?' posteriort '+nf(cb)+' mm':'')+'.');
+  P.push(o.length?o.join(' '):'Okklusjon og vertikal dimensjon ikke registrert i verktøyet.');
+  /* 3 etiologi og aktivitet */
+  let e=[];
+  const eti=etiologyList();
+  if(eti.length){eti.forEach(g=>{
+    let s=g.label+': ';
+    s+=g.items.length?joinNo(g.items)+'.':'ingen enkeltfaktorer avkrysset.';
+    if(g.note)s+=' '+g.note.replace(/\s+$/,'')+(/[.!?]$/.test(g.note.trim())?'':'.');
+    e.push(s)})}
+  else e.push('Ingen etiologiske faktorer registrert.');
+  const ak=gv('akt');
+  e.push(ak?'Tilstanden vurderes som '+L.akt[ak]+'.':'Aktivitet ikke angitt.');
+  const ad=fmtDate($('aktdato').value),cl=cmpList();
+  if(ad||cl.length)e.push('Vurderingen bygger på'+(cl.length?' '+joinNo(cl):' tidligere dokumentasjon')+(ad?', sammenliknet med registrering fra '+ad:'')+'.');
+  if(txt('akt_txt'))e.push(txt('akt_txt').replace(/\s+$/,'')+(/[.!?]$/.test(txt('akt_txt'))?'':'.'));
+  else e.push('Begrunnelse for aktivitetsvurderingen er ikke journalført.');
+  P.push(e.join(' '));
+  /* 4 alvorlighet mot alder */
+  let a=[];
+  a.push(age!==null?'Pas. er '+age+' år.':'Alder ikke angitt.');
+  const d1=txt('d1t'),d2=txt('d2t'),d3=txt('d3t'),d4=txt('d4t');
+  if(d1)a.push('Betydning for funksjon: '+d1.replace(/\s+$/,'')+(/[.!?]$/.test(d1)?'':'.'));
+  if(d2)a.push('Betydning for estetikk: '+d2.replace(/\s+$/,'')+(/[.!?]$/.test(d2)?'':'.'));
+  if(d3)a.push('Vesentlig nedsatt tannhelse: '+d3.replace(/\s+$/,'')+(/[.!?]$/.test(d3)?'':'.'));
+  if(d4)a.push('Skadeomfang vurdert mot alder: '+d4.replace(/\s+$/,'')+(/[.!?]$/.test(d4)?'':'.'));
+  if(age!==null&&tw.any&&tw.dentin<ageThreshold(age)&&tw.surf34===0)a.push('Registrert omfang er beskjedent sett mot pas. alder.');
+  const bd=txt('d6t');
+  a.push(chk('d6')?'Basisdokumentasjon foreligger'+(bd?': '+bd.replace(/\s+$/,'').replace(/\.$/,''):'')+'.':'Basisdokumentasjon er ikke bekreftet.');
+  const b7=txt('d7t');
+  a.push(chk('d7')?'Dokumentasjonen er ført før behandlingsstart'+(b7?': '+b7.replace(/\s+$/,'').replace(/\.$/,''):'')+'.':'Det er ikke bekreftet at dokumentasjonen er ført før behandlingsstart.');
+  P.push(a.join(' '));
+  /* 5 langtidsprognose */
+  const d5=txt('d5t');
+  P.push(d5?'Langtidsprognose ubehandlet: '+d5.replace(/\s+$/,'')+(/[.!?]$/.test(d5)?'':'.'):'Langtidsprognose ubehandlet er ikke journalført.');
+  /* 6 behandlingsplan */
+  let b=[];
+  const mat=gv('mat');
+  b.push(mat?'Planlagt behandling: '+L.mat[mat]+'.':'Materialvalg ikke angitt.');
+  if(mat==='plast')b.push('Plastisk materiale er valgt som førstevalg, og behandlingen legges opp mest mulig vevsbesparende.');
+  if(wantsCrown()){
+    const ka=txt('krone_a'),kb=txt('krone_b');
+    b.push(ka?'Begrunnelse for kroneterapi: '+ka.replace(/\s+$/,'')+(/[.!?]$/.test(ka)?'':'.'):'Begrunnelse for kroneterapi er ikke journalført.');
+    b.push(kb?'Vurdering av funksjonsforbedring sammenliknet med annen behandling: '+kb.replace(/\s+$/,'')+(/[.!?]$/.test(kb)?'':'.'):'Vurdering av funksjonsforbedring sammenliknet med annen behandling er ikke journalført.');
+  }
+  if(txt('planteeth'))b.push('Oppbygging planlegges på '+txt('planteeth').replace(/\.$/,'')+'.');
+  if(txt('seq'))b.push('Behandlingssekvens: '+txt('seq').replace(/\s+$/,'')+(/[.!?]$/.test(txt('seq'))?'':'.'));
+  if(txt('bitt'))b.push('Bittheving: '+txt('bitt').replace(/\s+$/,'')+(/[.!?]$/.test(txt('bitt'))?'':'.'));
+  P.push(b.join(' '));
+  /* 7 oppfølging */
+  let u=[];
+  const op=gv('oppf');
+  u.push(op?'Oppfølging planlagt med intervall på '+L.oppf[op]+'.':'Oppfølgingsintervall er ikke angitt.');
+  if(txt('oppf_txt'))u.push(txt('oppf_txt').replace(/\s+$/,'')+(/[.!?]$/.test(txt('oppf_txt'))?'':'.'));
+  u.push('Progresjon monitoreres ved sammenlikning mot basisdokumentasjonen.');
+  P.push(u.join(' '));
+  /* dokumentasjonsstatus */
+  if(doc.state==='green')P.push('Dokumentasjonsstatus: alle sju punkter i vurderingen mot innslagspunkt 9 er avhuket og begrunnet.');
+  else{
+    let m='Dokumentasjonsstatus ikke fullstendig ved journalføringstidspunktet. ';
+    if(doc.missChk.length)m+='Ikke bekreftet: '+doc.missChk.join('; ')+'. ';
+    if(doc.missTxt.length)m+='Mangler tilstrekkelig begrunnelse: '+doc.missTxt.join('; ')+'. ';
+    P.push(m.replace(/\s+$/,''));
+  }
+  const bl=[];
+  const hd=[];
+  const dt=fmtDate($('gdate').value||$('repdate').value);
+  if(dt)hd.push('Dato: '+dt);
+  if(txt('gref'))hd.push('Pasientnr.: '+txt('gref'));
+  if(txt('gtx'))hd.push('Behandler: '+txt('gtx'));
+  if(hd.length)bl.push(hd.join('. ')+'.');
+  return bl.concat(P).join('\n\n');
+}
+
+/* ---------- utskriftsrapport ---------- */
+function twTable(list,label,tw){
+  const act=activeSurfs();
+  let h='<table class="tw-tbl"><tr><th>'+label+'</th>';
+  list.forEach(id=>{h+='<th>'+id+'</th>'});h+='</tr>';
+  act.forEach(s=>{
+    h+='<tr><th>'+s.toUpperCase()+'</th>';
+    list.forEach(id=>{h+=teeth[id].miss?'<td class="miss">–</td>':'<td>'+teeth[id][s]+'</td>'});
+    h+='</tr>';
+  });
+  h+='<tr><th>Maks</th>';
+  list.forEach(id=>{h+=teeth[id].miss?'<td class="miss">M</td>':'<td>'+tw.perTooth[id]+'</td>'});
+  h+='</tr></table>';
+  return h;
+}
+function buildReport(tw,bw,doc,age,warns,journal){
+  const docWord={red:'RØD',yellow:'GUL',green:'GRØNN'}[doc.state];
+  const dsLab={red:'kriterier mangler',yellow:'haket av, men begrunnelse ufullstendig',green:'alle punkter utfylt'}[doc.state];
+  const li=a=>a.length?a.map(x=>'<li'+(x.warn?' style="color:#8A3A1C"':'')+'>'+esc(x.t)+'</li>').join(''):'<li>Ingen merknader.</li>';
+  const row=(k,v)=>'<tr><td class="lab">'+k+'</td><td>'+v+'</td></tr>';
+  const dash=v=>v===null||v===''||v===undefined?'Ikke angitt':v;
+  let h='';
+  h+='<div class="rep-head"><div><h1>Attrisjon og erosjon</h1><div class="src">Dokumentasjon av patologisk tap av tannsubstans · innslagspunkt 9</div></div>';
+  h+='<div class="rep-meta">Dato: '+esc(dash(fmtDate($('gdate').value||$('repdate').value)))+'<br>Pasientnummer: '+esc(txt('gref')||txt('repref')||'—')+'<br>Behandler: '+esc(txt('gtx')||'—')+'<br>Alder: '+(age!==null?age+' år':'ikke angitt')+'</div></div>';
+  h+='<div class="rep-dxlabel">Dokumentasjonsstatus</div>';
+  h+='<div class="rep-dx">'+docWord+' — '+dsLab+'</div>';
+  if(doc.state!=='green')h+='<p class="rep-flag">Dokumentasjonsstatus ikke fullstendig. Rapporten er ikke et grunnlag som er ferdig underbygget mot innslagspunkt 9.</p>';
+  h+='<p style="font-size:11.5px;color:#5A635C;margin:6px 0 0">Dokumentasjonsstatus er verktøyets kontroll av at alle sju punkter er avhuket og begrunnet. Den er ikke en godkjenning og innebærer ingen vurdering av stønadsrett.</p>';
+  if(warns.length)h+='<div class="rep-section"><h2>Kontrollpunkter</h2><ul>'+warns.map(w=>'<li'+(w.c==='err'?' style="color:#8A3A1C"':'')+'>'+esc(w.t)+'</li>').join('')+'</ul></div>';
+  h+='<div class="rep-section"><h2>Grunnlag — slitasjeomfang</h2><ul>'+li(wearWhy(tw,bw,age))+'</ul></div>';
+  h+='<div class="rep-section"><h2>Grunnlag — dokumentasjonsstatus</h2><ul>'+li(docWhy(doc))+'</ul></div>';
+  h+='<div class="rep-section"><h2>Grunnlag — behandlingsvalg</h2><ul>'+li(txWhy())+'</ul></div>';
+  h+='<div class="rep-section"><h2>TWI-registrering</h2>'+twTable(UPPER,'Overkjeve',tw)+'<div style="height:8px"></div>'+twTable(LOWER,'Underkjeve',tw);
+  h+='<p style="font-size:11.5px;color:#5A635C;margin:8px 0 0">B = bukkal, O = okklusal/incisal, L = lingual/palatinal, C = cervikal. M = tann registrert som manglende.'+(chk('simpleMode')?' Forenklet modus: kun okklusal/incisal flate registrert.':'')+'</p></div>';
+  h+='<div class="rep-section"><h2>Registrerte funn</h2><table class="rep-tbl">';
+  h+=row('Flater med score 3–4',tw.surf34+' av '+tw.surfTot);
+  h+=row('Tenner med dentineksponering',tw.dentin+(tw.dentin?' ('+tw.dentinTeeth.join(', ')+')':''));
+  h+=row('Affiserte flater',tw.surfAff+' av '+tw.surfTot+' ('+tw.pct+' %)');
+  h+=row('Høyeste TWI-score',tw.max+(tw.max?' på '+tw.maxTeeth.join(', '):''));
+  h+=row('Tenner registrert som manglende',tw.missing?tw.missing+' ('+ALL.filter(id=>teeth[id].miss).join(', ')+')':'0');
+  h+=row('BEWE',bw.complete?bw.sum+' av 18 · '+RISKTXT[bw.risk]:(bw.any?'ufullstendig ('+bw.count+' av 6 sekstanter, delsum '+bw.sum+')':'Ikke registrert'));
+  h+=row('Molarrelasjon',(gv('molarR')?L.molar[gv('molarR')]+' høyre':'ikke angitt høyre')+' · '+(gv('molarL')?L.molar[gv('molarL')]+' venstre':'ikke angitt venstre'));
+  h+=row('Frontrelasjon',gv('front')?L.front[gv('front')]:'Ikke angitt');
+  h+=row('Anterior guidance',gv('guid')?L.guid[gv('guid')]:'Ikke angitt');
+  h+=row('Vertikal dimensjon',(gv('ovd')?L.ovd[gv('ovd')]:'Ikke angitt')+(num('ovdmm')!==null?' · estimert tap '+nf(num('ovdmm'))+' mm':''));
+  h+=row('Estimert tap av kronehøyde',(num('crfront')!==null?'front '+nf(num('crfront'))+' mm':'front ikke angitt')+' · '+(num('crback')!==null?'posteriort '+nf(num('crback'))+' mm':'posteriort ikke angitt'));
+  ETI.forEach(g=>{const hit=g.items.filter(it=>chk(it[0])).map(it=>it[1]);
+    h+=row(g.label,(hit.length?esc(hit.join('; ')):'Ingen faktorer avkrysset')+(txt(g.note)?'<br><span style="color:#5A635C">'+esc(txt(g.note))+'</span>':''))});
+  h+=row('Aktivitet',(gv('akt')?L.akt[gv('akt')]:'Ikke angitt')+(fmtDate($('aktdato').value)?' · vurdert siden '+fmtDate($('aktdato').value):'')+(cmpList().length?' · grunnlag: '+esc(joinNo(cmpList())):''));
+  h+=row('Begrunnelse for aktivitet',txt('akt_txt')?esc(txt('akt_txt')):'<span style="color:#8A3A1C">Ikke journalført</span>');
+  h+=row('Materialvalg',gv('mat')?L.mat[gv('mat')]:'Ikke angitt');
+  if(wantsCrown()){
+    h+=row('Begrunnelse for kroneterapi',txt('krone_a')?esc(txt('krone_a')):'<span style="color:#8A3A1C">Ikke journalført</span>');
+    h+=row('Vesentlig funksjonsforbedring',txt('krone_b')?esc(txt('krone_b')):'<span style="color:#8A3A1C">Ikke journalført</span>');
+  }
+  h+=row('Planlagt oppbygging',txt('planteeth')?esc(txt('planteeth')):'Ikke angitt');
+  h+=row('Behandlingssekvens',txt('seq')?esc(txt('seq')):'Ikke angitt');
+  h+=row('Bittheving',txt('bitt')?esc(txt('bitt')):'Ikke angitt');
+  h+=row('Oppfølging',(gv('oppf')?L.oppf[gv('oppf')]:'Intervall ikke angitt')+(txt('oppf_txt')?'<br><span style="color:#5A635C">'+esc(txt('oppf_txt'))+'</span>':''));
+  h+='</table></div>';
+  h+='<div class="rep-section"><h2>Alvorlighetsvurdering mot innslagspunkt 9</h2><table class="rep-tbl">';
+  DOC.forEach(d=>{const c=chk(d[0]),t=txt(d[0]+'t');
+    let st=c?(t.length>=MIN_TXT?'Bekreftet':'Bekreftet, men begrunnelsen er ufullstendig'):'Ikke bekreftet';
+    const col=c&&t.length>=MIN_TXT?'':' style="color:#8A3A1C"';
+    h+='<tr><td class="lab">'+esc(d[1])+'</td><td><span'+col+'>'+st+'</span>'+(t?'<br>'+esc(t):'')+'</td></tr>'});
+  h+='</table></div>';
+  h+='<div class="rep-section"><h2>Journaltekst</h2><div class="rep-journal">'+esc(journal)+'</div></div>';
+  h+='<div class="rep-foot">Registrering etter Smith &amp; Knight Tooth Wear Index og, der det er utfylt, Basic Erosive Wear Examination. Verktøyet er dokumentasjonsstøtte for journalføring ved patologisk tap av tannsubstans, og er ingen garanti for stønadsrett. HELFO forhåndsgodkjenner ikke kasus: vurderingen gjøres etterskuddsvis, og bevisbyrden ligger hos behandlende tannlege. Rapporten inneholder ingen opplysninger om takster, refusjonsbeløp eller pasientbetaling. Klinisk skjønn og endelig vurdering ligger hos behandlende tannlege. Ingen data lagres eller sendes. Bruk kun pasientnummer — aldri navn eller fødselsnummer.</div>';
+  $('report').innerHTML=h;
+}
+
+/* ---------- handlinger ---------- */
+function setToday(){const d=new Date(),z=n=>String(n).padStart(2,'0'),v=d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());$('repdate').value=v;$('gdate').value=v}
+function clearTeeth(){ALL.forEach(id=>{teeth[id]={miss:false,b:0,o:0,l:0,c:0}});repaintAll();recompute()}
+function reset(){
+  document.querySelectorAll('input[type=radio]').forEach(r=>{r.checked=false});
+  document.querySelectorAll('input[type=radio][value="na"]').forEach(r=>{r.checked=true});
+  document.querySelectorAll('input[type=checkbox]').forEach(c=>{c.checked=false});
+  document.querySelectorAll('input[type=text],input[type=number],input[type=date],textarea').forEach(e=>{if(e.id!=='journalText')e.value=''});
+  ALL.forEach(id=>{teeth[id]={miss:false,b:0,o:0,l:0,c:0}});
+  repaintAll();setToday();$('copyFlash').textContent='';recompute();window.scrollTo({top:0,behavior:'smooth'});
+}
+let flashTimer=null;
+function flash(m){$('copyFlash').textContent=m;clearTimeout(flashTimer);flashTimer=setTimeout(()=>{$('copyFlash').textContent=''},4000)}
+function copyJournal(){
+  const ta=$('journalText'),v=ta.value;
+  const fallback=()=>{ta.removeAttribute('readonly');ta.focus();ta.select();ta.setSelectionRange(0,999999);let ok=false;
+    try{ok=document.execCommand('copy')}catch(e){ok=false}
+    ta.setAttribute('readonly','');
+    flash(ok?'Journaltekst kopiert.':'Kunne ikke kopiere automatisk. Teksten er markert — bruk Ctrl+C.')};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(()=>flash('Journaltekst kopiert.')).catch(fallback);
+  else fallback();
+}
+/* speiling av dato og pasientnummer mellom topplinje og punkt 1 */
+function mirror(a,b){$(a).addEventListener('input',()=>{$(b).value=$(a).value;recompute()});$(b).addEventListener('input',()=>{$(a).value=$(b).value;recompute()})}
+mirror('repdate','gdate');mirror('repref','gref');
+
+const appEl=document.querySelector('.app');
+appEl.addEventListener('input',recompute);
+appEl.addEventListener('change',recompute);
+$('simpleMode').addEventListener('change',()=>{repaintAll();recompute()});
+$('clearTeeth').addEventListener('click',clearTeeth);
+$('copyBtn').addEventListener('click',copyJournal);
+$('resetBtn').addEventListener('click',reset);
+$('printBtn').addEventListener('click',()=>{recompute();window.print()});
+$('mobileBar').addEventListener('click',()=>{$('resultCard').scrollIntoView({behavior:'smooth',block:'start'})});
+window.addEventListener('beforeprint',recompute);
+setToday();repaintAll();recompute();
+</script>
+</body>
+</html>
